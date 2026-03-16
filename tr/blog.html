@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Blog | Song&uuml;l &Ouml;z&uuml;g&uuml;rler</title>
+  <title>Arşiv | Song&uuml;l &Ouml;z&uuml;g&uuml;rler</title>
+  <meta name="description" content="Songül Özügürler'in writeup, PortSwigger lab, HTB, blue team ve pratik güvenlik araştırması arşivi." />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -27,10 +28,18 @@
     .nav-btn:hover{color:var(--green);border-color:var(--green);}
     .nav-btn.is-active{color:var(--green);border-color:var(--green);}
     .nav-menu-btn{display:none;}
-    .page-wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:6rem 1.5rem 4rem;}
-    .page-header{margin-bottom:2.5rem;}
-    .page-header h1{font-family:var(--mono);font-size:1.5rem;color:var(--green);margin-bottom:.4rem;}
-    .page-header p{font-size:.85rem;color:var(--text-dim);}
+    .page-wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:6rem 1.5rem 4rem;}
+    .page-header{margin-bottom:2rem;}
+    .page-header h1{font-family:var(--mono);font-size:1.7rem;color:var(--green);margin-bottom:.45rem;letter-spacing:.04em;}
+    .page-header p{font-size:.92rem;color:var(--text-dim);max-width:760px;line-height:1.8;}
+    .archive-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;margin-bottom:2rem;}
+    .archive-panel,.archive-signal{background:rgba(15,20,22,.92);border:1px solid var(--border);border-radius:10px;padding:1.15rem 1.2rem;}
+    .archive-eyebrow{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);border-radius:999px;padding:.3rem .7rem;margin-bottom:.85rem;}
+    .archive-panel p:last-of-type{margin-top:.65rem;}
+    .archive-mini{display:grid;gap:.75rem;}
+    .archive-mini-card{border:1px solid var(--border);border-radius:8px;padding:.85rem .9rem;background:rgba(255,255,255,.02);}
+    .archive-mini-card h3{font-family:var(--mono);font-size:.74rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem;}
+    .archive-mini-card p{font-size:.82rem;color:var(--text-dim);line-height:1.6;}
     .filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
     .filter-btn{font-family:var(--mono);font-size:.72rem;padding:.3rem .8rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;letter-spacing:.08em;transition:all .2s;}
     .filter-btn span{opacity:.6;margin-left:.3rem;}
@@ -53,7 +62,7 @@
     .hidden{display:none!important;}
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
     .reveal.visible{opacity:1;transform:none;}
-    .count-label{font-family:var(--mono);font-size:.75rem;color:var(--text-dim);margin-bottom:1rem;}
+    .count-label{font-family:var(--mono);font-size:.75rem;color:var(--text-dim);margin:0 0 1rem;}
     pre,code{overflow-x:auto;}
     @media(max-width:600px){
       nav{padding:.9rem 1rem;flex-wrap:wrap;}
@@ -62,6 +71,7 @@
       .nav-links{display:none;width:100%;flex-direction:column;gap:.5rem;padding-top:.8rem;}
       .nav-links.open{display:flex;}
       .nav-links a{font-size:.88rem;padding:.45rem 0;}
+      .archive-grid{grid-template-columns:1fr;}
       .article-item{grid-template-columns:1fr auto;}
       .article-meta{flex-direction:row;align-items:center;grid-column:1/-1;}
       .page-header p,.article-body p{font-size:.95rem;line-height:1.8;}
@@ -87,16 +97,40 @@
 
 <div class="page-wrap">
   <div class="page-header">
-    <h1># Blog &amp; Writeup'lar</h1>
-    <p>96 yazi - PortSwigger Labs, HackTheBox, TryHackMe, Blue Team ve daha fazlasi. Yazilar orijinal dilinde kalir.</p>
+    <h1># Araştırma Arşivi</h1>
+    <p>Bu arşiv portfolyonun kanıt katmanı. PortSwigger lab çözümleri, Hack The Box walkthrough'ları, blue team notları ve kısa güvenlik yazıları burada; yani iddianın değil işin kendisi.</p>
+  </div>
+
+  <div class="archive-grid">
+    <div class="archive-panel reveal">
+      <span class="archive-eyebrow">Sinyal Akışı</span>
+      <p>Bir güvenlik profilini değerlendirmenin en hızlı yolu yaptığı işleri okumaktır. Burada exploit walkthrough'ları, SQLi notları, recon yazıları, defensive gözlemler ve lab çözümleri bir arada duruyor.</p>
+      <p>Bazı yazılar orijinal dilinde bırakıldı; amaç yapay çeviri değil, doğrudan proof of work göstermek.</p>
+    </div>
+    <div class="archive-signal reveal">
+      <div class="archive-mini">
+        <div class="archive-mini-card">
+          <h3>İçerik</h3>
+          <p>PortSwigger, HTB, THM, blue team, sertifika ve web güvenliği başlıklarında 96 içerik.</p>
+        </div>
+        <div class="archive-mini-card">
+          <h3>Kimin İçin</h3>
+          <p>Recruiter, hiring manager ve teknik ekiplerin portfolyo iddiası yerine doğrudan işi görmek istediği anlar için.</p>
+        </div>
+        <div class="archive-mini-card">
+          <h3>Hızlı Kullanım</h3>
+          <p>Zafiyet ismi, lab veya kategoriyle arama yapıp en güçlü yazılara doğrudan geçebilirsin.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="search-box">
-    <input type="text" id="search" placeholder="Yazi ara... (ornek: SQL injection, HTB, XSS)" />
+    <input type="text" id="search" placeholder="Zafiyet, lab, makine veya konu ara... (SQL injection, HTB, XSS)" />
   </div>
 
   <div class="filter-bar">
-    <button class="filter-btn active" data-cat="all">Tumu <span>96</span></button>
+    <button class="filter-btn active" data-cat="all">Tümü <span>96</span></button>
         <button class="filter-btn" data-cat="PortSwigger" style="--cat-color:#00d4ff;">PortSwigger <span>40</span></button>
         <button class="filter-btn" data-cat="HTB" style="--cat-color:#ff4757;">HackTheBox <span>6</span></button>
         <button class="filter-btn" data-cat="TryHackMe" style="--cat-color:#ff6b35;">TryHackMe <span>7</span></button>
@@ -108,7 +142,7 @@
 
   </div>
 
-  <p class="count-label" id="count-label">96 yazi gosteriliyor</p>
+  <p class="count-label" id="count-label">96 içerik gösteriliyor</p>
 
   <div class="articles-list" id="articles-list">
       <a href="../posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="article-item reveal">
@@ -1296,7 +1330,7 @@ Bu labda problem teknik bir exploitten çok, satın alma akışında yanlış…
       if (catMatch && searchMatch) { item.classList.remove('hidden'); visible++; }
       else item.classList.add('hidden');
     });
-    countLabel.textContent = visible + ' yazi gosteriliyor';
+    countLabel.textContent = visible + ' içerik gösteriliyor';
   }
 
   btns.forEach(btn => btn.addEventListener('click', () => {

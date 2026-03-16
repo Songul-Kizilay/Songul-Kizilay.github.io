@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Blog | Song&uuml;l &Ouml;z&uuml;g&uuml;rler</title>
+  <title>Archive | Song&uuml;l &Ouml;z&uuml;g&uuml;rler</title>
+  <meta name="description" content="Security archive of writeups, PortSwigger labs, HTB notes, blue team posts, and practical research by Songül Özügürler." />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -27,10 +28,18 @@
     .nav-btn:hover{color:var(--green);border-color:var(--green);}
     .nav-btn.is-active{color:var(--green);border-color:var(--green);}
     .nav-menu-btn{display:none;}
-    .page-wrap{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:6rem 1.5rem 4rem;}
-    .page-header{margin-bottom:2.5rem;}
-    .page-header h1{font-family:var(--mono);font-size:1.5rem;color:var(--green);margin-bottom:.4rem;}
-    .page-header p{font-size:.85rem;color:var(--text-dim);}
+    .page-wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:6rem 1.5rem 4rem;}
+    .page-header{margin-bottom:2rem;}
+    .page-header h1{font-family:var(--mono);font-size:1.7rem;color:var(--green);margin-bottom:.45rem;letter-spacing:.04em;}
+    .page-header p{font-size:.92rem;color:var(--text-dim);max-width:760px;line-height:1.8;}
+    .archive-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;margin-bottom:2rem;}
+    .archive-panel,.archive-signal{background:rgba(15,20,22,.92);border:1px solid var(--border);border-radius:10px;padding:1.15rem 1.2rem;}
+    .archive-eyebrow{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);border:1px solid var(--green);border-radius:999px;padding:.3rem .7rem;margin-bottom:.85rem;}
+    .archive-panel p:last-of-type{margin-top:.65rem;}
+    .archive-mini{display:grid;gap:.75rem;}
+    .archive-mini-card{border:1px solid var(--border);border-radius:8px;padding:.85rem .9rem;background:rgba(255,255,255,.02);}
+    .archive-mini-card h3{font-family:var(--mono);font-size:.74rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem;}
+    .archive-mini-card p{font-size:.82rem;color:var(--text-dim);line-height:1.6;}
     .filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem;}
     .filter-btn{font-family:var(--mono);font-size:.72rem;padding:.3rem .8rem;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--text-dim);cursor:pointer;letter-spacing:.08em;transition:all .2s;}
     .filter-btn span{opacity:.6;margin-left:.3rem;}
@@ -53,7 +62,7 @@
     .hidden{display:none!important;}
     .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
     .reveal.visible{opacity:1;transform:none;}
-    .count-label{font-family:var(--mono);font-size:.75rem;color:var(--text-dim);margin-bottom:1rem;}
+    .count-label{font-family:var(--mono);font-size:.75rem;color:var(--text-dim);margin:0 0 1rem;}
     pre,code{overflow-x:auto;}
     @media(max-width:600px){
       nav{padding:.9rem 1rem;flex-wrap:wrap;}
@@ -62,6 +71,7 @@
       .nav-links{display:none;width:100%;flex-direction:column;gap:.5rem;padding-top:.8rem;}
       .nav-links.open{display:flex;}
       .nav-links a{font-size:.88rem;padding:.45rem 0;}
+      .archive-grid{grid-template-columns:1fr;}
       .article-item{grid-template-columns:1fr auto;}
       .article-meta{flex-direction:row;align-items:center;grid-column:1/-1;}
       .page-header p,.article-body p{font-size:.95rem;line-height:1.8;}
@@ -87,16 +97,40 @@
 
 <div class="page-wrap">
   <div class="page-header">
-    <h1># Blog &amp; Writeups</h1>
-    <p>96 posts - PortSwigger Labs, HackTheBox, TryHackMe, Blue Team, and more. Posts stay in their original language.</p>
+    <h1># Research Archive</h1>
+    <p>This archive is the proof layer behind the portfolio: PortSwigger labs, Hack The Box walkthroughs, blue team notes, and short research posts that show how I test, explain, and document security work.</p>
+  </div>
+
+  <div class="archive-grid">
+    <div class="archive-panel reveal">
+      <span class="archive-eyebrow">Signal Feed</span>
+      <p>The fastest way to judge a security profile is to read the work. This archive brings together public evidence: exploit walkthroughs, SQLi notes, recon content, defensive observations, and practical lab writeups.</p>
+      <p>Some posts stay in their original language because the goal here is accuracy and proof of work, not artificial translation.</p>
+    </div>
+    <div class="archive-signal reveal">
+      <div class="archive-mini">
+        <div class="archive-mini-card">
+          <h3>What Is Here</h3>
+          <p>96 posts across PortSwigger, HTB, THM, blue team, certificates, and web security research.</p>
+        </div>
+        <div class="archive-mini-card">
+          <h3>Best For</h3>
+          <p>Recruiters, hiring managers, and technical reviewers who want direct proof instead of generic portfolio claims.</p>
+        </div>
+        <div class="archive-mini-card">
+          <h3>Use It Fast</h3>
+          <p>Search by vulnerability name or filter by category to jump directly to the strongest writeups.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="search-box">
-    <input type="text" id="search" placeholder="Search posts... (e.g. SQL injection, HTB, XSS)" />
+    <input type="text" id="search" placeholder="Search by vuln, lab, machine, or topic... (SQL injection, HTB, XSS)" />
   </div>
 
   <div class="filter-bar">
-    <button class="filter-btn active" data-cat="all">All <span>96</span></button>
+    <button class="filter-btn active" data-cat="all">Everything <span>96</span></button>
         <button class="filter-btn" data-cat="PortSwigger" style="--cat-color:#00d4ff;">PortSwigger <span>40</span></button>
         <button class="filter-btn" data-cat="HTB" style="--cat-color:#ff4757;">HackTheBox <span>6</span></button>
         <button class="filter-btn" data-cat="TryHackMe" style="--cat-color:#ff6b35;">TryHackMe <span>7</span></button>
@@ -104,11 +138,11 @@
         <button class="filter-btn" data-cat="Web Security" style="--cat-color:#00ff88;">Web Security <span>4</span></button>
         <button class="filter-btn" data-cat="CTF" style="--cat-color:#ffd700;">CTF <span>3</span></button>
         <button class="filter-btn" data-cat="Sertifika" style="--cat-color:#00cc6a;">Certificates <span>2</span></button>
-        <button class="filter-btn" data-cat="Makale" style="--cat-color:#8b949e;">Makale <span>25</span></button>
+        <button class="filter-btn" data-cat="Makale" style="--cat-color:#8b949e;">Articles <span>25</span></button>
 
   </div>
 
-  <p class="count-label" id="count-label">96 posts shown</p>
+  <p class="count-label" id="count-label">96 entries shown</p>
 
   <div class="articles-list" id="articles-list">
       <a href="posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="article-item reveal">
@@ -1296,7 +1330,7 @@ Bu labda problem teknik bir exploitten çok, satın alma akışında yanlış…
       if (catMatch && searchMatch) { item.classList.remove('hidden'); visible++; }
       else item.classList.add('hidden');
     });
-    countLabel.textContent = visible + ' posts shown';
+    countLabel.textContent = visible + ' entries shown';
   }
 
   btns.forEach(btn => btn.addEventListener('click', () => {
