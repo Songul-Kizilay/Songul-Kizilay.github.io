@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aliens_detected</title>
+  <style>
+    :root{color-scheme:dark;--bg:#071012;--panel:#11161a;--text:#d8e5e0;--green:#00ff88;--border:rgba(0,255,136,.16)}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(circle at top,rgba(0,255,136,.08),transparent 30%),linear-gradient(180deg,#081016 0%,var(--bg) 72%);font-family:"JetBrains Mono",monospace;color:var(--text)}
+    .box{width:min(92vw,820px);padding:1rem;border:1px solid var(--border);border-radius:18px;background:rgba(17,22,26,.92);box-shadow:0 28px 70px rgba(0,0,0,.45)}
+    .eyebrow{margin:0 0 .85rem;color:var(--green);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+    img{display:block;width:100%;height:auto;border-radius:14px}
+    .caption{margin:.9rem 0 0;text-align:center;font-size:.92rem;color:#9fb0bc}
+    .actions{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1rem;border-radius:8px;text-decoration:none;font-size:.78rem;letter-spacing:.08em;border:1px solid var(--border);color:var(--text)}
+    .btn.primary{background:var(--green);color:#04140c;border-color:var(--green);font-weight:700}
+  </style>
+</head>
+<body>
+  <main class="box">
+    <p class="eyebrow">songul@sec:~$ aliens</p>
+    <img src="baby%20groot.gif" alt="Groot reaction gif" />
+    <p class="caption">Scanning galaxy for vulnerabilities... Groot seems calm. XSS is still everywhere.</p>
+    <div class="actions">
+      <a class="btn primary" href="index.html">Back To Root</a>
+      <a class="btn" href="tr/index.html">TR</a>
+    </div>
+  </main>
+</body>
+</html>
