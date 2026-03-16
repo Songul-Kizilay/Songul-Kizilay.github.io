@@ -116,7 +116,7 @@ Merhaba
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let W, H, mouse = { x: -9999, y: -9999 };
-  const PARTICLE_COUNT = 132;
+  const PARTICLE_COUNT = 156;
   const LINK_DIST = 125;
   const REPULSE_DIST = 135;
   const SPEED = 0.16;
@@ -137,7 +137,7 @@ Merhaba
     this.vy = (Math.random() - 0.5) * SPEED;
     this.r = Math.random() * 1.8 + 0.8;
     this.angle = Math.random() * Math.PI * 2;
-    this.spin = (Math.random() - 0.5) * 0.08;
+    this.spin = (Math.random() - 0.5) * 0.10;
   }
 
   Particle.prototype.update = function () {
@@ -180,7 +180,7 @@ Merhaba
         const dy = particles[i].y - particles[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < LINK_DIST) {
-          const alpha = (1 - dist / LINK_DIST) * 0.08;
+          const alpha = (1 - dist / LINK_DIST) * 0.10;
           ctx.strokeStyle = `rgba(${COLOR}, ${alpha})`;
           ctx.lineWidth = 0.7;
           ctx.beginPath();
@@ -194,7 +194,7 @@ Merhaba
       particle.update();
       ctx.beginPath();
       ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${COLOR}, 0.28)`;
+      ctx.fillStyle = `rgba(${COLOR}, 0.34)`;
       ctx.fill();
     });
     requestAnimationFrame(draw);
