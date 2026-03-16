@@ -486,12 +486,12 @@
   }
 
   function seedBackground() {
-    const count = Math.max(72, Math.floor((window.innerWidth * window.innerHeight) / 26000));
+    const count = Math.max(112, Math.floor((window.innerWidth * window.innerHeight) / 17000));
     bgState.nodes = Array.from({ length: count }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.22,
-      vy: (Math.random() - 0.5) * 0.22
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2
     }));
   }
 
@@ -500,6 +500,7 @@
     bgCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
     for (let i = 0; i < bgState.nodes.length; i += 1) {
       const a = bgState.nodes[i];
+      const neighbors = [];
       a.x += a.vx;
       a.y += a.vy;
       if (a.x < -20 || a.x > window.innerWidth + 20) a.vx *= -1;
@@ -518,6 +519,7 @@
         const dy = a.y - b.y;
         const dist = Math.hypot(dx, dy);
         if (dist < 150) {
+          if (neighbors.length < 5) neighbors.push(b);
           bgCtx.strokeStyle = "rgba(0,255,136," + (0.18 * (1 - dist / 150)).toFixed(3) + ")";
           bgCtx.lineWidth = 0.9;
           bgCtx.beginPath();
@@ -526,9 +528,25 @@
           bgCtx.stroke();
         }
       }
+      for (let n = 0; n < neighbors.length - 1; n += 1) {
+        for (let m = n + 1; m < neighbors.length; m += 1) {
+          const b = neighbors[n];
+          const c = neighbors[m];
+          const dbc = Math.hypot(b.x - c.x, b.y - c.y);
+          if (dbc < 150) {
+            bgCtx.fillStyle = "rgba(0,255,136,0.028)";
+            bgCtx.beginPath();
+            bgCtx.moveTo(a.x, a.y);
+            bgCtx.lineTo(b.x, b.y);
+            bgCtx.lineTo(c.x, c.y);
+            bgCtx.closePath();
+            bgCtx.fill();
+          }
+        }
+      }
     }
     bgState.nodes.forEach((node) => {
-      bgCtx.fillStyle = "rgba(0,255,136,0.44)";
+      bgCtx.fillStyle = "rgba(0,255,136,0.52)";
       bgCtx.beginPath();
       bgCtx.arc(node.x, node.y, 2, 0, Math.PI * 2);
       bgCtx.fill();
@@ -603,9 +621,20 @@
 
   const commandMap = {
     help: [
-      "core: about skills projects writeups blog tools experience certs github medium linkedin lang cv flag contact clear sudo",
-      "fun: hack rm -rf / passwords self-destruct coffee matrix aliens sudo hire songul",
-      "ops: scan target.com recon bruteforce login sleep bug 404 debug developer nmap localhost"
+      "Kullanilabilir komutlar:",
+      "",
+      "[gezinti]",
+      "about  skills  projects  writeups  blog  tools",
+      "experience  certs  github  medium  linkedin  lang  cv",
+      "flag  contact  clear  sudo",
+      "",
+      "[eglence]",
+      "hack  rm -rf /  passwords  self-destruct",
+      "coffee  matrix  aliens  sudo hire songul",
+      "",
+      "[operasyon]",
+      "scan target.com  recon  bruteforce login",
+      "sleep  bug  404  debug  developer  nmap localhost"
     ],
     about: ["Operat\u00f6r profili: web uygulama g\u00fcvenli\u011fi, bug bounty ve red team oda\u011f\u0131.", "Detayl\u0131 profil /tr/about.html sayfas\u0131nda."],
     skills: ["web application security", "red team operasyonlar\u0131", "ofansif do\u011frulama", "bug bounty", "burp suite", "python / bash"],
@@ -638,6 +667,7 @@
     lang: { type: "same-tab", target: "../index.html" },
     cv: { type: "same-tab", target: "about.html" },
     flag: { type: "same-tab", target: "../flag.html" },
+    matrix: { type: "same-tab", target: "../matrix.html" },
     sudo: { type: "same-tab", target: "../sudo.html" },
     contact: { type: "mailto", target: "mailto:songulkizilay46@gmail.com" },
     aliens: { type: "same-tab", target: "../aliens.html" },
@@ -664,7 +694,7 @@
     if (command === "coffee") return ["Brewing coffee...", "", "Fuel for bug hunting."];
     if (command === "matrix") {
       startMatrixRain();
-      return ["Wake up Neo...", "The Matrix has you."];
+      return ["Wake up Neo...", "The Matrix has you.", "", "Görsel payload açılıyor..."];
     }
     if (command === "aliens") return ["Scanning galaxy for vulnerabilities...", "", "No aliens found.", "", "But plenty of XSS."];
     if (command === "sudo hire songul") return ["Access granted.", "", "Welcome to the team.", "Recruiter bait."];
@@ -705,7 +735,7 @@
     const special = runSpecial(command);
     if (special) {
       emitLines(special);
-      if (command === "flag" || command === "aliens" || command === "developer" || command === "sudo") performCommandAction(command);
+      if (command === "flag" || command === "aliens" || command === "developer" || command === "sudo" || command === "matrix") performCommandAction(command);
       output.scrollTop = output.scrollHeight;
       return;
     }

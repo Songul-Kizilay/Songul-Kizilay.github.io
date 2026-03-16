@@ -22,6 +22,9 @@
     .a{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.3rem}
     .a a{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.15rem;border-radius:10px;border:1px solid var(--e);color:#d3d9e3;text-decoration:none}
     .a a:first-child{background:var(--a);color:#03140d;font-weight:700}
+    .n{margin-top:.9rem;text-align:center}
+    .n a{color:#8feec1;text-decoration:none;border-bottom:1px dashed rgba(143,238,193,.35);padding-bottom:.08rem}
+    .n a:hover{color:var(--a);border-color:var(--a)}
     @media (max-width:720px){.z{grid-template-columns:1fr}.g{max-width:340px;margin:0 auto}}
   </style>
 </head>
@@ -37,11 +40,13 @@
         <p>Suggested next step: go back to bug hunting without touching production.</p>
         <div class="a">
           <a href="index.html">Return to terminal</a>
-          <a href="aliens.html">Escalate to aliens</a>
         </div>
       </section>
-      <figure class="g">
+      <figure>
+        <div class="g">
         <img src="roo%20GIF.gif" alt="Judgmental kangaroo" />
+        </div>
+        <figcaption class="n"><a href="aliens.html">Need a second opinion?</a></figcaption>
       </figure>
     </div>
   </main>
