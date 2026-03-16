@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sudo | Songül Security</title>
+  <meta name="description" content="Permission denied. Root access reviewed by kangaroo." />
+  <style>
+    :root{--a:#00ff88;--b:#c9d1d9;--c:#0a0e0f;--d:#0f1416;--e:rgba(0,255,136,.16)}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:2rem;background:radial-gradient(circle at top,#111827 0,#0a0e0f 55%,#07090a 100%);color:var(--b);font-family:"IBM Plex Mono",monospace}
+    .x{width:min(760px,100%);background:rgba(15,20,22,.9);border:1px solid var(--e);border-radius:24px;padding:1.5rem;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+    .y{display:flex;gap:.55rem;padding:0 0 1rem}
+    .y span{width:14px;height:14px;border-radius:50%}
+    .y span:nth-child(1){background:#ff5f57}.y span:nth-child(2){background:#febc2e}.y span:nth-child(3){background:#28c840}
+    .z{display:grid;grid-template-columns:1.05fr .95fr;gap:1.4rem;align-items:center}
+    h1{margin:0 0 .8rem;color:var(--a);font-size:clamp(1.8rem,4vw,2.6rem)}
+    p{margin:.55rem 0;color:#d3d9e3;font-size:1rem;line-height:1.75}
+    .m{display:inline-flex;align-items:center;padding:.35rem .7rem;border:1px solid var(--e);border-radius:999px;color:var(--a);text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;margin-bottom:1rem}
+    .g{border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:#091112}
+    .g img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+    .a{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:1.3rem}
+    .a a{display:inline-flex;align-items:center;justify-content:center;padding:.85rem 1.15rem;border-radius:10px;border:1px solid var(--e);color:#d3d9e3;text-decoration:none}
+    .a a:first-child{background:var(--a);color:#03140d;font-weight:700}
+    @media (max-width:720px){.z{grid-template-columns:1fr}.g{max-width:340px;margin:0 auto}}
+  </style>
+</head>
+<body>
+  <main class="x">
+    <div class="y"><span></span><span></span><span></span></div>
+    <div class="z">
+      <section>
+        <div class="m">songul@sec:~$ sudo</div>
+        <h1>Nice try.</h1>
+        <p>You are not root here.</p>
+        <p>The kangaroo reviewed your request and denied elevation privileges.</p>
+        <p>Suggested next step: go back to bug hunting without touching production.</p>
+        <div class="a">
+          <a href="index.html">Return to terminal</a>
+          <a href="aliens.html">Escalate to aliens</a>
+        </div>
+      </section>
+      <figure class="g">
+        <img src="roo%20GIF.gif" alt="Judgmental kangaroo" />
+      </figure>
+    </div>
+  </main>
+</body>
+</html>
