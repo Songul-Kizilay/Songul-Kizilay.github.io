@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Songül Özügürler | Security Researcher</title>
-  <meta name="description" content="Junior Pentester focused on web application security, penetration testing and security research." />
+  <meta name="description" content="Security researcher focused on web application security, threat hunting, blue team visibility, and practical security tooling." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -173,6 +173,33 @@
       color: var(--cyan);
       margin-bottom: 1.6rem;
       letter-spacing: 0.05em;
+    }
+
+    .hero-value {
+      max-width: 760px;
+      margin: 0 auto 1.25rem;
+      color: var(--text-dim);
+      font-size: 0.96rem;
+      line-height: 1.9;
+    }
+
+    .hero-focus {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+      margin: 0 0 1.8rem;
+    }
+
+    .hero-focus span {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--green);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      background: rgba(255, 255, 255, 0.02);
+      letter-spacing: 0.04em;
     }
 
     /* Terminal typewriter */
@@ -345,6 +372,48 @@
       flex: 1;
       height: 1px;
       background: var(--border);
+    }
+
+    .section-copy {
+      max-width: 760px;
+      margin: -1.2rem 0 2rem;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    #proof { padding: 3rem 0 2rem; }
+
+    .proof-card {
+      min-height: 100%;
+    }
+
+    .proof-metric {
+      font-family: var(--mono);
+      font-size: 1.35rem;
+      color: #fff;
+      margin: 0.1rem 0 0.55rem;
+    }
+
+    .proof-note {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .proof-list {
+      margin-top: 0.85rem;
+      padding-left: 1rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      line-height: 1.75;
+    }
+
+    .proof-list li + li {
+      margin-top: 0.25rem;
     }
 
     /* ── WRITEUPS GRID ── */
@@ -676,6 +745,43 @@
       cursor: pointer;
     }
 
+    #cta { padding: 1rem 0 0; }
+
+    .cta-panel {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: linear-gradient(180deg, rgba(15, 20, 22, 0.92), rgba(10, 14, 15, 0.96));
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.7rem;
+    }
+
+    .cta-copy {
+      max-width: 620px;
+    }
+
+    .cta-copy h3 {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.65rem;
+    }
+
+    .cta-copy p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .cta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
     /* ── FOOTER ── */
     footer {
       position: relative;
@@ -751,6 +857,8 @@
       }
 
       .hero-role,
+      .hero-value,
+      .section-copy,
       .about-text p,
       .card p,
       .article-body p,
@@ -794,9 +902,16 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <span class="hero-badge">&#x2714; Security Researcher</span>
+    <span class="hero-badge">Operator Profile</span>
     <h1 class="hero-name"><span class="accent">Songül</span> Özügürler</h1>
-    <p class="hero-role">Security Researcher &nbsp;|&nbsp; Pentesting &nbsp;|&nbsp; Threat Hunting</p>
+    <p class="hero-role">Cyber Security Researcher | SOC Analyst</p>
+    <p class="hero-value">I break web applications for fun, then turn findings into repeatable security knowledge. My work sits at the intersection of web application security, threat hunting, blue team operations, and practical security tooling.</p>
+    <div class="hero-focus">
+      <span>Web Application Security</span>
+      <span>Threat Hunting</span>
+      <span>Blue Team Operations</span>
+      <span>Bug Bounty Research</span>
+    </div>
 
     <div class="terminal-box">
       <div class="terminal-top">
@@ -833,16 +948,72 @@
         <button class="terminal-action" type="button" data-command="sudo">sudo</button>
       </div>
       <form class="terminal-input-row" id="terminal-form">
-        <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Try: help, writeups, github, certs, lang" />
+        <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Try: help, projects, writeups, github, certs" />
         <button class="terminal-submit" type="submit">Run</button>
       </form>
     </div>
 
     <div class="hero-buttons">
-      <a href="#writeups" class="btn btn-primary">View Writeups</a>
-      <a href="blog.html" class="btn btn-outline">Read Blog</a>
-      <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium Profile</a>
-      <a href="https://github.com/songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="#tools" class="btn btn-primary">View Projects</a>
+      <a href="#writeups" class="btn btn-outline">Read Writeups</a>
+      <a href="mailto:songulkizilay46@gmail.com" class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Proof Of Work</h2></div>
+    <p class="section-copy reveal">Security portfolios need evidence, not adjectives. This section surfaces the work behind the profile: reported findings, offensive and defensive experience, public tooling, and practical writeups.</p>
+    <div class="cards-grid">
+      <div class="card proof-card reveal">
+        <div class="card-tag green">Bug Bounty</div>
+        <div class="proof-metric">10 Reported Findings</div>
+        <p>Bugcrowd reports built around manual verification, reproducible evidence, and impact-focused writeups instead of scanner-only output.</p>
+        <ul class="proof-list">
+          <li>Real web attack-surface validation</li>
+          <li>Manual triage over noisy tooling</li>
+          <li>Report-ready reproduction mindset</li>
+        </ul>
+        <div class="proof-note">Bugcrowd + public research</div>
+      </div>
+
+      <div class="card proof-card reveal">
+        <div class="card-tag blue">Red + Blue</div>
+        <div class="proof-metric">Attack And Detection Context</div>
+        <p>Red team experience at Enforsec, plus blue team and SOC support at Infinitum IT and the Ministry of Interior.</p>
+        <ul class="proof-list">
+          <li>Offensive testing and validation</li>
+          <li>Log, telemetry, and alert visibility</li>
+          <li>Analyst perspective during investigations</li>
+        </ul>
+        <div class="proof-note">Red team, SOC, blue team</div>
+      </div>
+
+      <div class="card proof-card reveal">
+        <div class="card-tag">Public Work</div>
+        <div class="proof-metric">Writeups, Labs, Tooling</div>
+        <p>Medium writeups, PortSwigger lab notes, Hack The Box walkthroughs, and GitHub repositories that document how I work through problems.</p>
+        <ul class="proof-list">
+          <li>HTB and PortSwigger coverage</li>
+          <li>Practical SQLi and recon walkthroughs</li>
+          <li>Public learning trail for recruiters and peers</li>
+        </ul>
+        <div class="proof-note">Medium + GitHub + labs</div>
+      </div>
+
+      <div class="card proof-card reveal">
+        <div class="card-tag green">Credentials</div>
+        <div class="proof-metric">CEH Practical + BGA</div>
+        <p>Formal training paired with hands-on operator habits across pentesting, networking fundamentals, and security operations.</p>
+        <ul class="proof-list">
+          <li>CEH Practical</li>
+          <li>BGA Penetration Tester Training Program</li>
+          <li>CCNA: Intro to Networks and AWS Security Fundamentals</li>
+        </ul>
+        <div class="proof-note">Training with practical application</div>
+      </div>
     </div>
   </div>
 </section>
@@ -850,51 +1021,50 @@
 <!-- WRITEUPS -->
 <section id="writeups">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># Latest Writeups</h2></div>
+    <div class="section-header reveal"><h2># Latest Vulnerability Writeups</h2></div>
+    <p class="section-copy reveal">The fastest way to judge a security researcher is to read the work. These recent writeups show exploit reasoning, lab process, and how findings are explained clearly.</p>
     <div class="cards-grid">
-
       <a href="posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="card reveal">
         <div class="card-tag">HackTheBox</div>
         <h3>Cap HTB Writeup</h3>
-        <p>CTF machine solution highlighting the importance of enumeration as a fundamental security testing methodology.</p>
-        <div class="card-footer"><span>Feb 27, 2026 · HTB</span><span class="arrow">→</span></div>
+        <p>A walkthrough centered on enumeration discipline, service analysis, and the small details that open the door to compromise.</p>
+        <div class="card-footer"><span>Feb 27, 2026 | HTB</span><span class="arrow">-></span></div>
       </a>
 
       <a href="posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="card reveal">
         <div class="card-tag blue">PortSwigger</div>
-        <h3>SQL Injection UNION — Multiple Values in Single Column</h3>
-        <p>UNION saldırısıyla tek kolonda birden fazla değer çekme tekniği ve lab çözümü.</p>
-        <div class="card-footer"><span>Mar 11, 2026 · SQLi</span><span class="arrow">→</span></div>
+        <h3>SQL Injection UNION - Multiple Values In One Column</h3>
+        <p>How to collapse multiple pieces of data into a single reflected column when a lab limits direct output paths.</p>
+        <div class="card-footer"><span>Mar 11, 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
       <a href="posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="card reveal">
         <div class="card-tag blue">PortSwigger</div>
-        <h3>SQL Injection UNION — Retrieving Data from Other Tables</h3>
-        <p>Extracting data from alternate database tables through UNION-based SQL injection techniques.</p>
-        <div class="card-footer"><span>Mar 10, 2026 · SQLi</span><span class="arrow">→</span></div>
+        <h3>SQL Injection UNION - Retrieving Data From Other Tables</h3>
+        <p>Extracting data from alternate tables through UNION-based SQL injection when the application exposes only part of the backend.</p>
+        <div class="card-footer"><span>Mar 10, 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
       <a href="posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="card reveal">
         <div class="card-tag blue">PortSwigger</div>
-        <h3>SQL Injection UNION — Finding a Column Containing Text</h3>
-        <p>Identifying text-compatible columns during UNION attack exploitation on PortSwigger lab.</p>
-        <div class="card-footer"><span>Mar 9, 2026 · SQLi</span><span class="arrow">→</span></div>
+        <h3>SQL Injection UNION - Finding A Text Column</h3>
+        <p>A practical method for identifying which reflected column can safely carry string data during UNION-based exploitation.</p>
+        <div class="card-footer"><span>Mar 9, 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
       <a href="posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="card reveal">
         <div class="card-tag green">Recon</div>
-        <h3>DNS Zone Transfer Nedir? AXFR Açığı Nasıl Çalışır?</h3>
-        <p>DNS'in derinliklerine inerek Zone Transfer açığının nasıl exploit edildiğini anlatan kapsamlı rehber.</p>
-        <div class="card-footer"><span>Feb 20, 2026 · DNS · Recon</span><span class="arrow">→</span></div>
+        <h3>DNS Zone Transfer And AXFR Abuse</h3>
+        <p>A recon-focused piece on how zone transfer exposure leaks internal visibility and why it still matters during external testing.</p>
+        <div class="card-footer"><span>Feb 20, 2026 | DNS</span><span class="arrow">-></span></div>
       </a>
 
       <a href="posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="card reveal">
         <div class="card-tag green">Recon</div>
-        <h3>Certificate Transparency Logları (CT Logs)</h3>
-        <p>CT Log'larının nasıl çalıştığı ve pentest/recon sürecinde nasıl kullanıldığı.</p>
-        <div class="card-footer"><span>Feb 23, 2026 · Recon</span><span class="arrow">→</span></div>
+        <h3>Certificate Transparency Logs For Recon</h3>
+        <p>Using CT logs to spot infrastructure drift, discover exposed subdomains, and widen the attack surface before testing starts.</p>
+        <div class="card-footer"><span>Feb 23, 2026 | Recon</span><span class="arrow">-></span></div>
       </a>
-
     </div>
   </div>
 </section>
@@ -902,14 +1072,14 @@
 <!-- ARTICLES -->
 <section id="articles">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># Blog Articles</h2></div>
+    <div class="section-header reveal"><h2># Blog, Labs, And Tutorials</h2></div>
+    <p class="section-copy reveal">Shorter notes and foundational tutorials help show whether someone can explain the why behind the exploit. These posts cover the basics without sounding basic.</p>
     <div class="articles-list">
-
       <a href="posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="article-item reveal">
         <span class="article-num">01</span>
         <div class="article-body">
           <h3>Cross-Site Scripting (XSS)</h3>
-          <p>XSS açıklarına genel bakış, exploit teknikleri ve gerçek dünya senaryoları.</p>
+          <p>Core XSS concepts, browser-side impact, and how payload thinking changes across reflected and stored scenarios.</p>
         </div>
         <span class="article-tag tag-xss">XSS</span>
       </a>
@@ -917,8 +1087,8 @@
       <a href="posts/2026-02-18_Web-Proxy-lerine-Giri--660731f8424e.html" class="article-item reveal">
         <span class="article-num">02</span>
         <div class="article-body">
-          <h3>Web Proxy'lerine Giriş</h3>
-          <p>Web proxy araçlarının güvenlik testlerinde kullanımı ve trafik izleme teknikleri.</p>
+          <h3>Introduction To Web Proxies</h3>
+          <p>Why intercepting traffic matters, how to read requests correctly, and how to make Burp Suite feel like a thinking tool.</p>
         </div>
         <span class="article-tag tag-recon">Proxy</span>
       </a>
@@ -926,8 +1096,8 @@
       <a href="posts/2026-02-09_DNS--Domain-Name-System--37515fbbeed0.html" class="article-item reveal">
         <span class="article-num">03</span>
         <div class="article-body">
-          <h3>DNS (Domain Name System)</h3>
-          <p>DNS'in internet altyapısındaki rolü ve domain → IP çeviri mekanizması.</p>
+          <h3>DNS Fundamentals</h3>
+          <p>A concise primer on the infrastructure layer that shapes recon quality before the first payload is ever sent.</p>
         </div>
         <span class="article-tag tag-recon">DNS</span>
       </a>
@@ -935,66 +1105,29 @@
       <a href="posts/2026-02-10_Virtual-Hosts--VHost--Nedir--0cc1e4c700d8.html" class="article-item reveal">
         <span class="article-num">04</span>
         <div class="article-body">
-          <h3>Virtual Hosts (VHost) Nedir?</h3>
-          <p>Web sunucularının tek IP üzerinde birden fazla siteyi nasıl host ettiği.</p>
+          <h3>Virtual Hosts And Hidden Attack Surface</h3>
+          <p>How VHosts change scope visibility and why they frequently hide forgotten panels, environments, or admin surfaces.</p>
         </div>
         <span class="article-tag tag-recon">Recon</span>
       </a>
 
-      <a href="posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="article-item reveal">
+      <a href="posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="article-item reveal">
         <span class="article-num">05</span>
         <div class="article-body">
-          <h3>Certificate Transparency Logları (CT Logs)</h3>
-          <p>CT Log sistemleri ve pentest recon sürecindeki kullanımı.</p>
+          <h3>Cross-Site Request Forgery (CSRF)</h3>
+          <p>Request trust, session context, and the conditions that make browser-based state changes exploitable.</p>
         </div>
-        <span class="article-tag tag-recon">Recon</span>
+        <span class="article-tag tag-blue">CSRF</span>
       </a>
 
-      <a href="posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="article-item reveal">
+      <a href="posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="article-item reveal">
         <span class="article-num">06</span>
         <div class="article-body">
-          <h3>DNS Zone Transfer Nedir? AXFR Açığı Nasıl Çalışır?</h3>
-          <p>DNS Zone Transfer açığının derinlemesine analizi ve exploit yöntemi.</p>
+          <h3>HTML Injection</h3>
+          <p>Where content rendering bugs sit on the ladder between harmless formatting issues and security-relevant browser behavior.</p>
         </div>
-        <span class="article-tag tag-recon">DNS</span>
+        <span class="article-tag tag-blue">HTML</span>
       </a>
-
-      <a href="posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="article-item reveal">
-        <span class="article-num">07</span>
-        <div class="article-body">
-          <h3>SQLi UNION Attack — Finding a Column Containing Text</h3>
-          <p>UNION attack sırasında metin uyumlu kolon tespiti lab walkthrough.</p>
-        </div>
-        <span class="article-tag tag-sqli">SQLi</span>
-      </a>
-
-      <a href="posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="article-item reveal">
-        <span class="article-num">08</span>
-        <div class="article-body">
-          <h3>SQLi UNION Attack — Retrieving Data from Other Tables</h3>
-          <p>UNION saldırısı ile farklı tablolardan veri çekme tekniği.</p>
-        </div>
-        <span class="article-tag tag-sqli">SQLi</span>
-      </a>
-
-      <a href="posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="article-item reveal">
-        <span class="article-num">09</span>
-        <div class="article-body">
-          <h3>SQLi UNION Attack — Multiple Values in Single Column</h3>
-          <p>Tek kolonda birden fazla değer çekme tekniği ve lab çözümü.</p>
-        </div>
-        <span class="article-tag tag-sqli">SQLi</span>
-      </a>
-
-      <a href="posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="article-item reveal">
-        <span class="article-num">10</span>
-        <div class="article-body">
-          <h3>Cap HTB Writeup</h3>
-          <p>Enumeration odaklı HTB makine çözümü ve privilege escalation adımları.</p>
-        </div>
-        <span class="article-tag tag-blue">HTB</span>
-      </a>
-
     </div>
   </div>
 </section>
@@ -1002,28 +1135,29 @@
 <!-- TOOLS -->
 <section id="tools">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># Featured Projects</h2></div>
+    <div class="section-header reveal"><h2># Projects That Prove The Work</h2></div>
+    <p class="section-copy reveal">Hiring managers do not need ten unfinished repositories. They need a few focused examples that show how you think, automate, and document security work end to end.</p>
     <div class="carousel-shell reveal">
       <div class="carousel-track" id="project-track">
         <div class="carousel-slide">
           <div class="tool-card">
-            <div class="tool-icon">&#x1F50D;</div>
-            <h3>Recon Automation Pack</h3>
-            <p>Subdomain enumeration, DNS validation and service discovery adimlarini tek akista toplayan bir recon paketi.</p>
+            <div class="tool-icon">&#128269;</div>
+            <h3>Bug Bounty Recon Workflow</h3>
+            <p>A repeatable recon chain inspired by subfinder, httpx, and nuclei style workflows for widening attack surface and prioritizing manual validation.</p>
           </div>
         </div>
         <div class="carousel-slide">
           <div class="tool-card">
-            <div class="tool-icon">&#x1F4C4;</div>
-            <h3>Writeup Knowledge Base</h3>
-            <p>PortSwigger, HTB ve notlari tekrar eden tekniklere gore hizli taranabilir hale getiren arsiv yapisi.</p>
+            <div class="tool-icon">&#129514;</div>
+            <h3>unionhunter</h3>
+            <p>A lightweight Python helper for UNION-based SQL injection reconnaissance, column testing, and faster manual exploitation setup.</p>
           </div>
         </div>
         <div class="carousel-slide">
           <div class="tool-card">
-            <div class="tool-icon">&#x2699;&#xFE0F;</div>
-            <h3>Blue Team Lab Notes</h3>
-            <p>SIEM, Snort ve MITRE ATT&amp;CK odakli notlari saldiri perspektifi ile birlestiren savunma odakli seri.</p>
+            <div class="tool-icon">&#128752;</div>
+            <h3>Detection And Research Notes</h3>
+            <p>Blue team lab notes that connect telemetry, attacker behavior, and operational context instead of treating alerts as isolated events.</p>
           </div>
         </div>
       </div>
@@ -1034,61 +1168,51 @@
           <button class="carousel-dot" type="button" data-slide="2" aria-label="Slide 3"></button>
         </div>
         <div class="nav-actions">
-          <button class="nav-btn" id="carousel-prev" type="button" aria-label="Previous slide">&#8592;</button>
-          <button class="nav-btn" id="carousel-next" type="button" aria-label="Next slide">&#8594;</button>
+          <button class="nav-btn" id="carousel-prev" type="button" aria-label="Previous slide">&larr;</button>
+          <button class="nav-btn" id="carousel-next" type="button" aria-label="Next slide">&rarr;</button>
         </div>
       </div>
     </div>
 
     <div class="repo-header reveal">
       <h3 style="font-family:var(--mono);font-size:.95rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;"># GitHub Projects</h3>
-      <p>Songul-Kizilay • 98 total stars • security tools, notes, writeups</p>
+      <p>Songul-Kizilay | 98 stars | security tooling, writeups, and research notes</p>
     </div>
 
     <div class="repo-grid">
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/unionhunter" target="_blank" rel="noopener noreferrer">
         <h3>unionhunter</h3>
-        <p>Lightweight SQL injection reconnaissance tool built for UNION-based vulnerability discovery and fast manual triage.</p>
+        <p>SQL injection reconnaissance tooling built around UNION-style testing, useful when you want fast feedback before deeper manual exploitation.</p>
         <div class="repo-meta">
           <span>Python</span>
+          <span>SQLi</span>
           <span>MIT</span>
-          <span>Updated 4d ago</span>
         </div>
       </a>
 
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/xfcheck" target="_blank" rel="noopener noreferrer">
         <h3>xfcheck</h3>
-        <p>Checks whether a backend processes X-Forwarded headers, useful for header trust issues and proxy behavior validation.</p>
+        <p>Validates whether backends trust X-Forwarded headers, making it useful for proxy chain analysis and header-based behavior testing.</p>
         <div class="repo-meta">
           <span>Python</span>
-          <span>Header Analysis</span>
-          <span>Updated Dec 9, 2025</span>
+          <span>Header trust</span>
+          <span>Research tooling</span>
         </div>
       </a>
 
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/PortswiggerAllLabs" target="_blank" rel="noopener noreferrer">
         <h3>PortswiggerAllLabs</h3>
-        <p>Personal notes and writeups for PortSwigger Web Security Academy labs, organized as a practical study archive.</p>
+        <p>A practical knowledge base for Web Security Academy labs, documenting the repeatable thought process behind exploitation rather than just final answers.</p>
         <div class="repo-meta">
           <span>Writeups</span>
+          <span>Labs</span>
           <span>MIT</span>
-          <span>Updated Dec 14, 2025</span>
-        </div>
-      </a>
-
-      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/CVE-2014-0346" target="_blank" rel="noopener noreferrer">
-        <h3>CVE-2014-0346</h3>
-        <p>Focused exploit-style repository showing hands-on interest in vulnerability reproduction and proof-of-concept work.</p>
-        <div class="repo-meta">
-          <span>Python</span>
-          <span>CVE</span>
-          <span>Updated Jun 9, 2025</span>
         </div>
       </a>
 
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/favicon.hash" target="_blank" rel="noopener noreferrer">
         <h3>favicon.hash</h3>
-        <p>Small recon helper around favicon hashing, useful for fingerprinting infrastructure and clustering related assets.</p>
+        <p>A compact recon helper for fingerprinting related assets through favicon hashes, useful when infrastructure mapping needs fast clustering.</p>
         <div class="repo-meta">
           <span>Python</span>
           <span>Recon</span>
@@ -1102,45 +1226,55 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># Profile Snapshot</h2></div>
+    <div class="section-header reveal"><h2># Operator Snapshot</h2></div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p><span>Batman Universitesi Bilgisayar Muhendisligi</span> mezunuyum ve guvenlige hem saldiri mantigi hem savunma gorunurlugu tarafindan yaklasiyorum. Manuel web application pentest, API security, bug bounty ve teknik writeup uretimi su anki ana odak alanlarim.</p>
-        <p><span>Enforsec</span> tarafinda Red Team, <span>Infinitum IT</span> ve <span>Icisleri Bakanligi</span> tarafinda Blue Team ve SOC destek deneyimi kazandim. Bu sayede sadece acigi bulan degil, olayin izini log, telemetry ve operasyon akisinda da okuyabilen bir bakis gelistirdim.</p>
-        <p><span>Bugcrowd</span> uzerinde 10 farkli bulgu raporladim; <span>BITES</span>, <span>Deneyap Turkiye</span> ve <span>CyberHero Academy</span> sureclerinde ise izleme, otomasyon, laboratuvar ve egitim tarafinda calistim. Yani profilim sadece teorik degil; dogrudan sahaya temas eden, uygulamali bir guvenlik akisi uzerine kurulu.</p>
-        <div style="margin-top:1rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; CEH Practical</span>
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; BGA Pentester Training</span>
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; CCNA: Intro to Networks</span>
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; AWS Security Fundamentals</span>
-        </div>
+        <p><span>Batman University Computer Engineering</span> graduate with a working style shaped by both attacker curiosity and defensive visibility. My current focus is manual web application pentesting, API security, bug bounty validation, and turning raw findings into usable technical notes.</p>
+        <p><span>Enforsec</span> gave me red team exposure, while <span>Infinitum IT</span> and the <span>Ministry of Interior</span> gave me blue team and SOC context. That combination matters because it means I do not stop at finding the bug; I also think about logs, telemetry, detection gaps, and operational impact.</p>
+        <p><span>BITES</span>, <span>Deneyap Türkiye</span>, and <span>CyberHero Academy</span> added monitoring, automation, lab-building, and mentoring experience. The result is a profile built on hands-on security work rather than portfolio aesthetics alone.</p>
         <div style="margin-top:1.5rem">
           <a href="about.html" class="btn btn-primary" style="font-size:0.75rem">Open About Page</a>
-          <a href="mailto:songulkizilay46@gmail.com" class="btn btn-outline" style="font-size:0.75rem;margin-left:.5rem;">Get In Touch</a>
+          <a href="https://medium.com/@songulkizilay" class="btn btn-outline" style="font-size:0.75rem;margin-left:.5rem;" target="_blank" rel="noopener noreferrer">Read Medium</a>
         </div>
       </div>
       <div class="skills-box reveal">
         <h3>&#x25B6; Skills &amp; Focus Areas</h3>
         <div class="skill-tags">
           <a href="blog.html?cat=PortSwigger" class="skill-tag">Web Pentesting</a>
-          <a href="blog.html?cat=PortSwigger" class="skill-tag">Red Team</a>
-          <a href="blog.html?cat=Web Security" class="skill-tag">OWASP Top 10</a>
+          <a href="blog.html?cat=Web Security" class="skill-tag">Web App Security</a>
           <a href="blog.html?cat=PortSwigger" class="skill-tag">SQL Injection</a>
           <a href="posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="skill-tag">XSS</a>
-          <a href="blog.html?cat=PortSwigger" class="skill-tag">SSRF</a>
           <a href="posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="skill-tag">CSRF</a>
-          <a href="blog.html?cat=Web Security" class="skill-tag">API Security</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Bug Bounty</a>
-          <a href="blog.html?cat=CTF" class="skill-tag">CTF</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Recon</a>
+          <a href="blog.html?cat=CTF" class="skill-tag">CTF</a>
+          <a href="blog.html?cat=Web Security" class="skill-tag">API Security</a>
           <a href="blog.html?cat=PortSwigger" class="skill-tag">Burp Suite</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Nuclei</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Nessus</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Threat Hunting</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Blue Team Ops</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Python</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Bash</a>
-          <a href="blog.html?cat=HTB" class="skill-tag">HackTheBox</a>
           <a href="https://bugcrowd.com/songulkizilay" target="_blank" rel="noopener noreferrer" class="skill-tag">Bugcrowd</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Interested In Working Together?</h2></div>
+    <div class="cta-panel reveal">
+      <div class="cta-copy">
+        <h3>Need someone who can both find issues and explain them clearly?</h3>
+        <p>I am building toward security research, junior pentest, and analyst roles where practical testing, clear reporting, and public proof of work actually matter.</p>
+      </div>
+      <div class="cta-links">
+        <a href="mailto:songulkizilay46@gmail.com" class="btn btn-primary">Email</a>
+        <a href="https://www.linkedin.com/in/songulozugurler/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Songul-Kizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium</a>
       </div>
     </div>
   </div>
@@ -1149,12 +1283,12 @@
 <!-- FOOTER -->
 <footer>
   <ul class="footer-links">
-    <li><a href="https://github.com/songulkizilay" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    <li><a href="https://github.com/Songul-Kizilay" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/songulozugurler/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     <li><a href="https://medium.com/@songulkizilay" target="_blank" rel="noopener noreferrer">Medium</a></li>
     <li><a href="mailto:songulkizilay46@gmail.com">Contact</a></li>
   </ul>
-  <p class="footer-copy">© 2026 Songül Özügürler — Junior Pentester</p>
+  <p class="footer-copy">&copy; 2026 Songül Özügürler | Security Researcher</p>
 </footer>
 
 <!-- ══════════════════════════════════════
@@ -1278,8 +1412,8 @@
 (function () {
   const lines = [
     'Songül Özügürler - Security Researcher',
-    'Specializing in Pentesting, Threat Hunting',
-    '& Security Research'
+    'I break web applications for fun.',
+    'Web security, threat hunting, and blue team visibility.'
   ];
   const el = document.getElementById('typewriter');
   let ci = 0;
@@ -1326,21 +1460,21 @@
   const input = document.getElementById('terminal-input');
   const commandMap = {
     help: ['about', 'skills', 'projects', 'writeups', 'blog', 'tools', 'experience', 'certs', 'github', 'medium', 'linkedin', 'lang', 'cv', 'flag', 'contact', 'clear', 'sudo'],
-    about: ['Full profile moved to /about.html', 'Red team, blue team, bug bounty, mentoring, and certifications.'],
-    skills: ['web pentesting', 'api security', 'bug bounty', 'red / blue team', 'burp suite', 'python / bash'],
-    projects: ['Recon Automation Pack', 'Writeup Knowledge Base', 'Blue Team Lab Notes'],
-    writeups: ['/#writeups', 'Latest writeups, PortSwigger labs, and practical notes'],
+    about: ['Operator profile: web app security, bug bounty, red and blue team context.', 'More detail on /about.html.'],
+    skills: ['web application security', 'threat hunting', 'blue team operations', 'bug bounty', 'burp suite', 'python / bash'],
+    projects: ['Bug Bounty Recon Workflow', 'unionhunter', 'Detection And Research Notes'],
+    writeups: ['/#writeups', 'Latest vulnerability writeups, HTB walkthroughs, and PortSwigger lab notes'],
     blog: ['/blog.html', 'Archive page with filters, search, and all published posts'],
-    tools: ['/#tools', 'Featured projects, GitHub repositories, and research tooling'],
+    tools: ['/#tools', 'Selected security tools, GitHub projects, and practical research work'],
     experience: ['/about.html', 'Red team, blue team, SOC support, mentoring, and operations'],
     certs: ['CEH Practical', 'BGA Penetration Tester Training Program', 'CCNA: Intro to Networks', 'AWS Security Fundamentals'],
-    github: ['github.com/songulkizilay', 'Featured: unionhunter, xfcheck, PortswiggerAllLabs, favicon.hash'],
-    medium: ['medium.com/@songulkizilay', 'Writeups, lab notes, and security research posts'],
+    github: ['github.com/Songul-Kizilay', 'Featured: unionhunter, xfcheck, PortswiggerAllLabs, favicon.hash'],
+    medium: ['medium.com/@songulkizilay', 'Writeups, walkthroughs, and security research posts'],
     linkedin: ['linkedin.com/in/songulozugurler', 'Security profile, experience, and certifications'],
     lang: ['/index.html -> English', '/tr/index.html -> Turkish'],
     cv: ['/about.html', 'Experience, certifications, and operator profile overview'],
     flag: ['flag{nice_try_operator}', 'Opening decoy image...'],
-    contact: ['songulkizilay46@gmail.com', 'github.com/songulkizilay', 'medium.com/@songulkizilay', 'linkedin.com/in/songulozugurler'],
+    contact: ['songulkizilay46@gmail.com', 'github.com/Songul-Kizilay', 'medium.com/@songulkizilay', 'linkedin.com/in/songulozugurler'],
     sudo: ['Permission denied.', 'Nice try :)']
   };
 

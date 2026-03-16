@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Song&uuml;l &Ouml;z&uuml;g&uuml;rler | Guvenlik Arastirmacisi</title>
-  <meta name="description" content="Web guvenligi, pentest ve security research odakli portfolyo." />
+  <title>Songül Özügürler | Siber Güvenlik Araştırmacısı</title>
+  <meta name="description" content="Web uygulama güvenliği, tehdit avcılığı, blue team görünürlüğü ve pratik güvenlik araçları odaklı portfolyo." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -173,6 +173,33 @@
       color: var(--cyan);
       margin-bottom: 1.6rem;
       letter-spacing: 0.05em;
+    }
+
+    .hero-value {
+      max-width: 760px;
+      margin: 0 auto 1.25rem;
+      color: var(--text-dim);
+      font-size: 0.96rem;
+      line-height: 1.9;
+    }
+
+    .hero-focus {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+      margin: 0 0 1.8rem;
+    }
+
+    .hero-focus span {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--green);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      background: rgba(255, 255, 255, 0.02);
+      letter-spacing: 0.04em;
     }
 
     /* Terminal typewriter */
@@ -345,6 +372,48 @@
       flex: 1;
       height: 1px;
       background: var(--border);
+    }
+
+    .section-copy {
+      max-width: 760px;
+      margin: -1.2rem 0 2rem;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    #proof { padding: 3rem 0 2rem; }
+
+    .proof-card {
+      min-height: 100%;
+    }
+
+    .proof-metric {
+      font-family: var(--mono);
+      font-size: 1.35rem;
+      color: #fff;
+      margin: 0.1rem 0 0.55rem;
+    }
+
+    .proof-note {
+      font-family: var(--mono);
+      font-size: 0.74rem;
+      color: var(--green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .proof-list {
+      margin-top: 0.85rem;
+      padding-left: 1rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      line-height: 1.75;
+    }
+
+    .proof-list li + li {
+      margin-top: 0.25rem;
     }
 
     /* ── WRITEUPS GRID ── */
@@ -676,6 +745,43 @@
       cursor: pointer;
     }
 
+    #cta { padding: 1rem 0 0; }
+
+    .cta-panel {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: linear-gradient(180deg, rgba(15, 20, 22, 0.92), rgba(10, 14, 15, 0.96));
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.7rem;
+    }
+
+    .cta-copy {
+      max-width: 620px;
+    }
+
+    .cta-copy h3 {
+      font-family: var(--mono);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.65rem;
+    }
+
+    .cta-copy p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .cta-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
     /* ── FOOTER ── */
     footer {
       position: relative;
@@ -751,6 +857,8 @@
       }
 
       .hero-role,
+      .hero-value,
+      .section-copy,
       .about-text p,
       .card p,
       .article-body p,
@@ -794,9 +902,16 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <span class="hero-badge">&#x2714; Guvenlik Arastirmacisi</span>
-    <h1 class="hero-name"><span class="accent">Song&uuml;l</span> &Ouml;z&uuml;g&uuml;rler</h1>
-    <p class="hero-role">Guvenlik Arastirmasi &nbsp;|&nbsp; Pentest &nbsp;|&nbsp; Tehdit Avciligi</p>
+    <span class="hero-badge">Operatör Profili</span>
+    <h1 class="hero-name"><span class="accent">Songül</span> Özügürler</h1>
+    <p class="hero-role">Siber Güvenlik Araştırmacısı | SOC Analisti</p>
+    <p class="hero-value">Web uygulamalarını zorlamayı seviyorum; bulguları ise raporlanabilir, tekrar üretilebilir ve savunma tarafına anlamlı veri sağlayan çıktılara dönüştürüyorum. Odağım web uygulama güvenliği, tehdit avcılığı, blue team operasyonları ve pratik güvenlik araçları.</p>
+    <div class="hero-focus">
+      <span>Web Uygulama Güvenliği</span>
+      <span>Tehdit Avcılığı</span>
+      <span>Blue Team Operasyonları</span>
+      <span>Bug Bounty Araştırması</span>
+    </div>
 
     <div class="terminal-box">
       <div class="terminal-top">
@@ -833,16 +948,72 @@
         <button class="terminal-action" type="button" data-command="sudo">sudo</button>
       </div>
       <form class="terminal-input-row" id="terminal-form">
-        <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Komut dene: help, writeups, github, certs, lang" />
-        <button class="terminal-submit" type="submit">Calistir</button>
+        <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" spellcheck="false" placeholder="Dene: help, projects, writeups, github, certs" />
+        <button class="terminal-submit" type="submit">Çalıştır</button>
       </form>
     </div>
 
     <div class="hero-buttons">
-      <a href="#writeups" class="btn btn-primary">Writeup'lara Git</a>
-      <a href="blog.html" class="btn btn-outline">Blog'u Oku</a>
-      <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium Profili</a>
-      <a href="https://github.com/songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="#tools" class="btn btn-primary">Projeleri Gör</a>
+      <a href="#writeups" class="btn btn-outline">Writeup'ları Oku</a>
+      <a href="mailto:songulkizilay46@gmail.com" class="btn btn-outline">İletişime Geç</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof">
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Kanıt Katmanı</h2></div>
+    <p class="section-copy reveal">Siber güvenlik portfolyosunda sıfat değil kanıt gerekir. Bu bölümde profilin arkasındaki somut işler var: raporlanan bulgular, red ve blue team deneyimi, public araçlar ve pratik writeup'lar.</p>
+    <div class="cards-grid">
+      <div class="card proof-card reveal">
+        <div class="card-tag green">Bug Bounty</div>
+        <div class="proof-metric">10 Raporlanmış Bulgu</div>
+        <p>Bugcrowd üzerinde manuel doğrulama, tekrar üretilebilir kanıt ve etkisi açıklanmış rapor mantığıyla hazırlanmış gerçek bulgular.</p>
+        <ul class="proof-list">
+          <li>Gerçek web attack surface doğrulaması</li>
+          <li>Gürültülü scanner çıktısı yerine manuel triage</li>
+          <li>Raporlanabilir ve savunulabilir bulgu akışı</li>
+        </ul>
+        <div class="proof-note">Bugcrowd + güvenlik araştırması</div>
+      </div>
+
+      <div class="card proof-card reveal">
+        <div class="card-tag blue">Red + Blue</div>
+        <div class="proof-metric">Saldırı Ve Tespit Perspektifi</div>
+        <p>Enforsec tarafında red team, Infinitum IT ve İçişleri tarafında blue team ve SOC desteği ile iki tarafı da görmüş bir çalışma biçimi.</p>
+        <ul class="proof-list">
+          <li>Ofansif test ve doğrulama tecrübesi</li>
+          <li>Log, telemetry ve alarm görünürlüğü</li>
+          <li>Analist bakışıyla olay okuma refleksi</li>
+        </ul>
+        <div class="proof-note">Red team, SOC, blue team</div>
+      </div>
+
+      <div class="card proof-card reveal">
+        <div class="card-tag">Public Work</div>
+        <div class="proof-metric">Writeup, Lab, Araç</div>
+        <p>Medium yazıları, PortSwigger lab çözümleri, Hack The Box walkthrough'ları ve GitHub reposu üzerinden görünür bir öğrenme ve üretim izi.</p>
+        <ul class="proof-list">
+          <li>HTB ve PortSwigger odaklı içerik</li>
+          <li>SQLi ve recon tabanlı pratik anlatımlar</li>
+          <li>Recruiter ve teknik ekip için görünür kanıt</li>
+        </ul>
+        <div class="proof-note">Medium + GitHub + lab'ler</div>
+      </div>
+
+      <div class="card proof-card reveal">
+        <div class="card-tag green">Sertifikalar</div>
+        <div class="proof-metric">CEH Practical + BGA</div>
+        <p>Pentest, ağ temelleri ve güvenlik operasyonlarını gerçek uygulamayla birleştiren eğitim çizgisi.</p>
+        <ul class="proof-list">
+          <li>CEH Practical</li>
+          <li>BGA Penetration Tester Training Program</li>
+          <li>CCNA: Intro to Networks ve AWS Security Fundamentals</li>
+        </ul>
+        <div class="proof-note">Eğitim + sahaya temas</div>
+      </div>
     </div>
   </div>
 </section>
@@ -850,51 +1021,50 @@
 <!-- WRITEUPS -->
 <section id="writeups">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># Son Writeup'lar</h2></div>
+    <div class="section-header reveal"><h2># Son Zafiyet Writeup'ları</h2></div>
+    <p class="section-copy reveal">Bir güvenlik araştırmacısını anlamanın en hızlı yolu yaptığı işleri okumaktır. Bu seçki, exploit mantığını, lab sürecini ve teknik anlatım kalitesini öne çıkarıyor.</p>
     <div class="cards-grid">
-
       <a href="../posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="card reveal">
         <div class="card-tag">HackTheBox</div>
         <h3>Cap HTB Writeup</h3>
-        <p>CTF machine solution highlighting the importance of enumeration as a fundamental security testing methodology.</p>
-        <div class="card-footer"><span>Feb 27, 2026 · HTB</span><span class="arrow">→</span></div>
+        <p>Enumeration disiplininin neden kritik olduğunu gösteren, servis analizi ve zincirleme düşünce odaklı bir walkthrough.</p>
+        <div class="card-footer"><span>27 Şub 2026 | HTB</span><span class="arrow">-></span></div>
       </a>
 
       <a href="../posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="card reveal">
         <div class="card-tag blue">PortSwigger</div>
-        <h3>SQL Injection UNION — Multiple Values in Single Column</h3>
-        <p>UNION saldırısıyla tek kolonda birden fazla değer çekme tekniği ve lab çözümü.</p>
-        <div class="card-footer"><span>Mar 11, 2026 · SQLi</span><span class="arrow">→</span></div>
+        <h3>SQL Injection UNION - Tek Kolonda Çoklu Veri</h3>
+        <p>Uygulamanın çıktıyı kısıtladığı durumda birden fazla değeri tek kolonda birleştirme mantığını anlatan lab çözümü.</p>
+        <div class="card-footer"><span>11 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
       <a href="../posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="card reveal">
         <div class="card-tag blue">PortSwigger</div>
-        <h3>SQL Injection UNION — Retrieving Data from Other Tables</h3>
-        <p>Extracting data from alternate database tables through UNION-based SQL injection techniques.</p>
-        <div class="card-footer"><span>Mar 10, 2026 · SQLi</span><span class="arrow">→</span></div>
+        <h3>SQL Injection UNION - Farklı Tablolardan Veri Çekme</h3>
+        <p>UNION tabanlı SQL injection ile uygulamanın göstermediği tablolardan veri almanın pratik mantığı.</p>
+        <div class="card-footer"><span>10 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
       <a href="../posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="card reveal">
         <div class="card-tag blue">PortSwigger</div>
-        <h3>SQL Injection UNION — Finding a Column Containing Text</h3>
-        <p>Identifying text-compatible columns during UNION attack exploitation on PortSwigger lab.</p>
-        <div class="card-footer"><span>Mar 9, 2026 · SQLi</span><span class="arrow">→</span></div>
+        <h3>SQL Injection UNION - Metin Taşıyan Kolonu Bulma</h3>
+        <p>UNION saldırısında string veriyi güvenle taşıyacak kolonu tespit etmenin en temiz yolunu anlatan lab çözümü.</p>
+        <div class="card-footer"><span>9 Mar 2026 | SQLi</span><span class="arrow">-></span></div>
       </a>
 
       <a href="../posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="card reveal">
         <div class="card-tag green">Recon</div>
-        <h3>DNS Zone Transfer Nedir? AXFR Açığı Nasıl Çalışır?</h3>
-        <p>DNS'in derinliklerine inerek Zone Transfer açığının nasıl exploit edildiğini anlatan kapsamlı rehber.</p>
-        <div class="card-footer"><span>Feb 20, 2026 · DNS · Recon</span><span class="arrow">→</span></div>
+        <h3>DNS Zone Transfer ve AXFR Açığı</h3>
+        <p>Zone transfer zafiyetinin neden hâlâ önemli olduğunu ve dış testlerde nasıl ciddi görünürlük sağladığını anlatan yazı.</p>
+        <div class="card-footer"><span>20 Şub 2026 | DNS</span><span class="arrow">-></span></div>
       </a>
 
       <a href="../posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="card reveal">
         <div class="card-tag green">Recon</div>
-        <h3>Certificate Transparency Logları (CT Logs)</h3>
-        <p>CT Log'larının nasıl çalıştığı ve pentest/recon sürecinde nasıl kullanıldığı.</p>
-        <div class="card-footer"><span>Feb 23, 2026 · Recon</span><span class="arrow">→</span></div>
+        <h3>Certificate Transparency Logları ile Recon</h3>
+        <p>CT log kayıtlarının subdomain keşfi ve altyapı görünürlüğü için nasıl kullanılabileceğini anlatan pratik yazı.</p>
+        <div class="card-footer"><span>23 Şub 2026 | Recon</span><span class="arrow">-></span></div>
       </a>
-
     </div>
   </div>
 </section>
@@ -902,14 +1072,14 @@
 <!-- ARTICLES -->
 <section id="articles">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># Blog Yazilari</h2></div>
+    <div class="section-header reveal"><h2># Blog, Lab ve Kısa Notlar</h2></div>
+    <p class="section-copy reveal">Daha kısa teknik notlar, bir konuyu gerçekten anlayıp anlatabildiğini gösterir. Buradaki yazılar temel konuları yüzeysel değil, güvenlik bakışıyla ele alıyor.</p>
     <div class="articles-list">
-
       <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="article-item reveal">
         <span class="article-num">01</span>
         <div class="article-body">
           <h3>Cross-Site Scripting (XSS)</h3>
-          <p>XSS açıklarına genel bakış, exploit teknikleri ve gerçek dünya senaryoları.</p>
+          <p>XSS mantığı, tarayıcı tarafı etkiler ve payload bakışının reflected ile stored senaryolarda nasıl değiştiği.</p>
         </div>
         <span class="article-tag tag-xss">XSS</span>
       </a>
@@ -918,7 +1088,7 @@
         <span class="article-num">02</span>
         <div class="article-body">
           <h3>Web Proxy'lerine Giriş</h3>
-          <p>Web proxy araçlarının güvenlik testlerinde kullanımı ve trafik izleme teknikleri.</p>
+          <p>Trafik yakalamanın neden kritik olduğu, istekleri nasıl okumak gerektiği ve Burp Suite'in nasıl düşünme aracı hâline geldiği.</p>
         </div>
         <span class="article-tag tag-recon">Proxy</span>
       </a>
@@ -926,8 +1096,8 @@
       <a href="../posts/2026-02-09_DNS--Domain-Name-System--37515fbbeed0.html" class="article-item reveal">
         <span class="article-num">03</span>
         <div class="article-body">
-          <h3>DNS (Domain Name System)</h3>
-          <p>DNS'in internet altyapısındaki rolü ve domain → IP çeviri mekanizması.</p>
+          <h3>DNS Temelleri</h3>
+          <p>Recon kalitesini daha ilk adımdan etkileyen altyapı katmanını sade ama güvenlik odaklı bir dille anlatan giriş yazısı.</p>
         </div>
         <span class="article-tag tag-recon">DNS</span>
       </a>
@@ -935,66 +1105,29 @@
       <a href="../posts/2026-02-10_Virtual-Hosts--VHost--Nedir--0cc1e4c700d8.html" class="article-item reveal">
         <span class="article-num">04</span>
         <div class="article-body">
-          <h3>Virtual Hosts (VHost) Nedir?</h3>
-          <p>Web sunucularının tek IP üzerinde birden fazla siteyi nasıl host ettiği.</p>
+          <h3>Virtual Host'lar ve Gizli Attack Surface</h3>
+          <p>VHost yapılarının görünmeyen panelleri, unutulmuş ortamları ve ek saldırı yüzeylerini nasıl saklayabildiği.</p>
         </div>
         <span class="article-tag tag-recon">Recon</span>
       </a>
 
-      <a href="../posts/2026-02-23_Certificate-Transparency-Loglari--CT-Logs--1901b2af6879.html" class="article-item reveal">
+      <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="article-item reveal">
         <span class="article-num">05</span>
         <div class="article-body">
-          <h3>Certificate Transparency Logları (CT Logs)</h3>
-          <p>CT Log sistemleri ve pentest recon sürecindeki kullanımı.</p>
+          <h3>Cross-Site Request Forgery (CSRF)</h3>
+          <p>İstek güveni, oturum bağlamı ve tarayıcı üzerinden state değiştiren işlemlerin hangi koşullarda zafiyete dönüştüğü.</p>
         </div>
-        <span class="article-tag tag-recon">Recon</span>
+        <span class="article-tag tag-blue">CSRF</span>
       </a>
 
-      <a href="../posts/2026-02-20_DNS-Zone-Transfer-Nedir--AXFR-A-----Nas-l--al---r--a9fac396e74f.html" class="article-item reveal">
+      <a href="../posts/2026-02-13_HTML-Injection-8ac0bc44aa32.html" class="article-item reveal">
         <span class="article-num">06</span>
         <div class="article-body">
-          <h3>DNS Zone Transfer Nedir? AXFR Açığı Nasıl Çalışır?</h3>
-          <p>DNS Zone Transfer açığının derinlemesine analizi ve exploit yöntemi.</p>
+          <h3>HTML Injection</h3>
+          <p>Masum görünen render problemlerinin ne zaman güvenlik açısından anlamlı hâle geldiğini anlatan kısa teknik not.</p>
         </div>
-        <span class="article-tag tag-recon">DNS</span>
+        <span class="article-tag tag-blue">HTML</span>
       </a>
-
-      <a href="../posts/2026-03-09_Lab--SQL-injection-UNION-attack--finding-a-column-containing-text-dba317ce4a28.html" class="article-item reveal">
-        <span class="article-num">07</span>
-        <div class="article-body">
-          <h3>SQLi UNION Attack — Finding a Column Containing Text</h3>
-          <p>UNION attack sırasında metin uyumlu kolon tespiti lab walkthrough.</p>
-        </div>
-        <span class="article-tag tag-sqli">SQLi</span>
-      </a>
-
-      <a href="../posts/2026-03-10_Lab--SQL-injection-UNION-attack--retrieving-data-from-other-tables-d984afee2171.html" class="article-item reveal">
-        <span class="article-num">08</span>
-        <div class="article-body">
-          <h3>SQLi UNION Attack — Retrieving Data from Other Tables</h3>
-          <p>UNION saldırısı ile farklı tablolardan veri çekme tekniği.</p>
-        </div>
-        <span class="article-tag tag-sqli">SQLi</span>
-      </a>
-
-      <a href="../posts/2026-03-11_Lab--SQL-injection-UNION-attack--retrieving-multiple-values-in-a-single-column-5b54fabcbbbc.html" class="article-item reveal">
-        <span class="article-num">09</span>
-        <div class="article-body">
-          <h3>SQLi UNION Attack — Multiple Values in Single Column</h3>
-          <p>Tek kolonda birden fazla değer çekme tekniği ve lab çözümü.</p>
-        </div>
-        <span class="article-tag tag-sqli">SQLi</span>
-      </a>
-
-      <a href="../posts/2026-02-27_Cap-Htb-Writeup-407ab0bf17be.html" class="article-item reveal">
-        <span class="article-num">10</span>
-        <div class="article-body">
-          <h3>Cap HTB Writeup</h3>
-          <p>Enumeration odaklı HTB makine çözümü ve privilege escalation adımları.</p>
-        </div>
-        <span class="article-tag tag-blue">HTB</span>
-      </a>
-
     </div>
   </div>
 </section>
@@ -1002,28 +1135,29 @@
 <!-- TOOLS -->
 <section id="tools">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># One Cikan Projeler</h2></div>
+    <div class="section-header reveal"><h2># İşin Gerçek Yüzünü Gösteren Projeler</h2></div>
+    <p class="section-copy reveal">On tane yarım repo yerine birkaç güçlü örnek daha değerlidir. Buradaki seçki, nasıl düşündüğümü, otomasyon kurduğumu ve güvenlik işini nasıl belgelendirdiğimi gösteriyor.</p>
     <div class="carousel-shell reveal">
       <div class="carousel-track" id="project-track">
         <div class="carousel-slide">
           <div class="tool-card">
-            <div class="tool-icon">&#x1F50D;</div>
-            <h3>Recon Otomasyon Paketi</h3>
-            <p>Subdomain enumeration, DNS dogrulama ve servis kesfini tek akista toplayan bir recon paketi.</p>
+            <div class="tool-icon">&#128269;</div>
+            <h3>Bug Bounty Recon Workflow</h3>
+            <p>subfinder, httpx ve nuclei mantığını birleştiren; attack surface genişletme ve manuel triage için kurgulanmış recon akışı.</p>
           </div>
         </div>
         <div class="carousel-slide">
           <div class="tool-card">
-            <div class="tool-icon">&#x1F4C4;</div>
-            <h3>Writeup Bilgi Arsivi</h3>
-            <p>PortSwigger, HTB ve diger notlari tekrar eden tekniklere gore hizli taranabilir hale getiren yapi.</p>
+            <div class="tool-icon">&#129514;</div>
+            <h3>unionhunter</h3>
+            <p>UNION tabanlı SQL injection araştırmalarında kolon testi, veri taşıma ve hızlı manuel doğrulama için geliştirilen hafif Python aracı.</p>
           </div>
         </div>
         <div class="carousel-slide">
           <div class="tool-card">
-            <div class="tool-icon">&#x2699;&#xFE0F;</div>
-            <h3>Blue Team Lab Notlari</h3>
-            <p>SIEM, Snort ve MITRE ATT&amp;CK odakli notlari saldiri perspektifi ile birlestiren savunma serisi.</p>
+            <div class="tool-icon">&#128752;</div>
+            <h3>Detection And Research Notes</h3>
+            <p>Telemetry, saldırgan davranışı ve operasyon bağlamını bir araya getiren blue team notları ve araştırma akışı.</p>
           </div>
         </div>
       </div>
@@ -1034,61 +1168,51 @@
           <button class="carousel-dot" type="button" data-slide="2" aria-label="Slide 3"></button>
         </div>
         <div class="nav-actions">
-          <button class="nav-btn" id="carousel-prev" type="button" aria-label="Previous slide">&#8592;</button>
-          <button class="nav-btn" id="carousel-next" type="button" aria-label="Next slide">&#8594;</button>
+          <button class="nav-btn" id="carousel-prev" type="button" aria-label="Previous slide">&larr;</button>
+          <button class="nav-btn" id="carousel-next" type="button" aria-label="Next slide">&rarr;</button>
         </div>
       </div>
     </div>
 
     <div class="repo-header reveal">
       <h3 style="font-family:var(--mono);font-size:.95rem;color:var(--green);letter-spacing:.08em;text-transform:uppercase;"># GitHub Projeleri</h3>
-      <p>Songul-Kizilay ? 98 yildiz ? guvenlik araclari, notlar ve writeup'lar</p>
+      <p>Songul-Kizilay | 98 yıldız | güvenlik araçları, writeup'lar ve araştırma notları</p>
     </div>
 
     <div class="repo-grid">
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/unionhunter" target="_blank" rel="noopener noreferrer">
         <h3>unionhunter</h3>
-        <p>UNION tabanli SQL injection zafiyetlerini kesfetmek ve hizli manuel triage yapmak icin hafif bir arastirma araci.</p>
+        <p>UNION tabanlı SQL injection araştırmaları için geliştirilmiş; hızlı geri bildirim verip manuel exploit akışını hızlandıran araç.</p>
         <div class="repo-meta">
           <span>Python</span>
+          <span>SQLi</span>
           <span>MIT</span>
-          <span>4 gun once guncellendi</span>
         </div>
       </a>
 
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/xfcheck" target="_blank" rel="noopener noreferrer">
         <h3>xfcheck</h3>
-        <p>Arka ucun X-Forwarded basliklarini isleyip islemedigini kontrol eder; header trust ve proxy davranisi analizinde kullanislidir.</p>
+        <p>Arka uçların X-Forwarded başlıklarına güvenip güvenmediğini kontrol eden, proxy ve header davranışı analizinde faydalı bir araç.</p>
         <div class="repo-meta">
           <span>Python</span>
-          <span>Header Analizi</span>
-          <span>9 Ara 2025 guncellemesi</span>
+          <span>Header trust</span>
+          <span>Araştırma aracı</span>
         </div>
       </a>
 
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/PortswiggerAllLabs" target="_blank" rel="noopener noreferrer">
         <h3>PortswiggerAllLabs</h3>
-        <p>PortSwigger Web Security Academy lablari icin hazirlanmis kisisel notlar ve pratik calisma arsivi.</p>
+        <p>Web Security Academy lab'leri için sadece cevap değil, exploit düşünce zincirini de belgeleyen pratik bir bilgi arşivi.</p>
         <div class="repo-meta">
           <span>Writeup</span>
+          <span>Lab</span>
           <span>MIT</span>
-          <span>14 Ara 2025 guncellemesi</span>
-        </div>
-      </a>
-
-      <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/CVE-2014-0346" target="_blank" rel="noopener noreferrer">
-        <h3>CVE-2014-0346</h3>
-        <p>Zafiyet yeniden uretimi ve proof-of-concept calismalarina odaklanan exploit tarzi repo.</p>
-        <div class="repo-meta">
-          <span>Python</span>
-          <span>CVE</span>
-          <span>9 Haz 2025 guncellemesi</span>
         </div>
       </a>
 
       <a class="repo-card reveal" href="https://github.com/Songul-Kizilay/favicon.hash" target="_blank" rel="noopener noreferrer">
         <h3>favicon.hash</h3>
-        <p>Favicon hash mantigi etrafinda kurulmus kucuk bir recon yardimcisi; altyapi fingerprinting icin kullanislidir.</p>
+        <p>Favicon hash yaklaşımıyla benzer altyapıları kümelendirmeye yardımcı olan küçük ama pratik bir recon aracı.</p>
         <div class="repo-meta">
           <span>Python</span>
           <span>Recon</span>
@@ -1102,45 +1226,55 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="content-wrap">
-    <div class="section-header reveal"><h2># Profil Ozeti</h2></div>
+    <div class="section-header reveal"><h2># Operatör Özeti</h2></div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p><span>Batman Universitesi Bilgisayar Muhendisligi</span> mezunuyum ve guvenlige hem saldiri mantigi hem savunma gorunurlugu tarafindan yaklasiyorum. Manuel web application pentest, API security, bug bounty ve teknik writeup uretimi su anki ana odak alanlarim.</p>
-        <p><span>Enforsec</span> tarafinda Red Team, <span>Infinitum IT</span> ve <span>Icisleri Bakanligi</span> tarafinda Blue Team ve SOC destek deneyimi kazandim. Bu sayede sadece acigi bulan degil, olayin izini log, telemetry ve operasyon akisinda da okuyabilen bir bakis gelistirdim.</p>
-        <p><span>Bugcrowd</span> uzerinde 10 farkli bulgu raporladim; <span>BITES</span>, <span>Deneyap Turkiye</span> ve <span>CyberHero Academy</span> sureclerinde ise izleme, otomasyon, laboratuvar ve egitim tarafinda calistim. Yani profilim sadece teorik degil; dogrudan sahaya temas eden, uygulamali bir guvenlik akisi uzerine kurulu.</p>
-        <div style="margin-top:1rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; CEH Practical</span>
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; BGA Pentester Training</span>
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; CCNA: Intro to Networks</span>
-          <span style="font-family:var(--mono);font-size:0.72rem;color:var(--green);">&#x2714; AWS Security Fundamentals</span>
-        </div>
+        <p><span>Batman Üniversitesi Bilgisayar Mühendisliği</span> mezunuyum. Çalışma biçimim hem saldırgan merakı hem de savunma görünürlüğü ile şekilleniyor. Şu an ana odağım manuel web application pentest, API güvenliği, bug bounty doğrulaması ve teknik bulguları okunabilir çıktılara dönüştürmek.</p>
+        <p><span>Enforsec</span> bana red team tarafını, <span>Infinitum IT</span> ve <span>İçişleri Bakanlığı</span> ise blue team ve SOC tarafını gösterdi. Bu yüzden benim için iş sadece açığı bulmak değil; log, telemetry, alarm akışı ve operasyonel etkiyi de okumak.</p>
+        <p><span>BITES</span>, <span>Deneyap Türkiye</span> ve <span>CyberHero Academy</span> süreçleri de izleme, otomasyon, laboratuvar kurma ve mentorluk tarafını ekledi. Kısacası bu profil görselden değil, sahaya temas eden uygulamalı güvenlik işlerinden oluşuyor.</p>
         <div style="margin-top:1.5rem">
-          <a href="about.html" class="btn btn-primary" style="font-size:0.75rem">Hakkimda Sayfasi</a>
-          <a href="mailto:songulkizilay46@gmail.com" class="btn btn-outline" style="font-size:0.75rem;margin-left:.5rem;">Iletisim</a>
+          <a href="about.html" class="btn btn-primary" style="font-size:0.75rem">Hakkımda Sayfası</a>
+          <a href="https://medium.com/@songulkizilay" class="btn btn-outline" style="font-size:0.75rem;margin-left:.5rem;" target="_blank" rel="noopener noreferrer">Medium'da Oku</a>
         </div>
       </div>
       <div class="skills-box reveal">
-        <h3>&#x25B6; Yetenekler &amp; Odak Alanlari</h3>
+        <h3>&#x25B6; Yetenekler &amp; Odak Alanları</h3>
         <div class="skill-tags">
           <a href="blog.html?cat=PortSwigger" class="skill-tag">Web Pentesting</a>
-          <a href="blog.html?cat=PortSwigger" class="skill-tag">Red Team</a>
-          <a href="blog.html?cat=Web Security" class="skill-tag">OWASP Top 10</a>
+          <a href="blog.html?cat=Web Security" class="skill-tag">Web App Security</a>
           <a href="blog.html?cat=PortSwigger" class="skill-tag">SQL Injection</a>
           <a href="../posts/2026-02-17_Cross-Site-Scripting--XSS--3e1ef0d5d958.html" class="skill-tag">XSS</a>
-          <a href="blog.html?cat=PortSwigger" class="skill-tag">SSRF</a>
           <a href="../posts/2026-02-17_Cross-Site-Request-Forgery--CSRF--9f95ab2f013b.html" class="skill-tag">CSRF</a>
-          <a href="blog.html?cat=Web Security" class="skill-tag">API Security</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Bug Bounty</a>
-          <a href="blog.html?cat=CTF" class="skill-tag">CTF</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Recon</a>
+          <a href="blog.html?cat=CTF" class="skill-tag">CTF</a>
+          <a href="blog.html?cat=Web Security" class="skill-tag">API Security</a>
           <a href="blog.html?cat=PortSwigger" class="skill-tag">Burp Suite</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Nuclei</a>
-          <a href="blog.html?cat=Makale" class="skill-tag">Nessus</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Threat Hunting</a>
+          <a href="blog.html?cat=Makale" class="skill-tag">Blue Team Ops</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Python</a>
           <a href="blog.html?cat=Makale" class="skill-tag">Bash</a>
-          <a href="blog.html?cat=HTB" class="skill-tag">HackTheBox</a>
           <a href="https://bugcrowd.com/songulkizilay" target="_blank" rel="noopener noreferrer" class="skill-tag">Bugcrowd</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="content-wrap">
+    <div class="section-header reveal"><h2># Birlikte Çalışalım Mı?</h2></div>
+    <div class="cta-panel reveal">
+      <div class="cta-copy">
+        <h3>Hem zafiyet bulup hem de net anlatabilen birine mi ihtiyacınız var?</h3>
+        <p>Pentest, junior security analyst ve security research odaklı rollerde; pratik test, açık raporlama ve görünür proof of work ile değer üreten bir çizgide ilerliyorum.</p>
+      </div>
+      <div class="cta-links">
+        <a href="mailto:songulkizilay46@gmail.com" class="btn btn-primary">E-posta</a>
+        <a href="https://www.linkedin.com/in/songulozugurler/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/Songul-Kizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://medium.com/@songulkizilay" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Medium</a>
       </div>
     </div>
   </div>
@@ -1149,12 +1283,12 @@
 <!-- FOOTER -->
 <footer>
   <ul class="footer-links">
-    <li><a href="https://github.com/songulkizilay" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    <li><a href="https://github.com/Songul-Kizilay" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="https://www.linkedin.com/in/songulozugurler/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     <li><a href="https://medium.com/@songulkizilay" target="_blank" rel="noopener noreferrer">Medium</a></li>
-    <li><a href="mailto:songulkizilay46@gmail.com">Iletisim</a></li>
+    <li><a href="mailto:songulkizilay46@gmail.com">İletişim</a></li>
   </ul>
-  <p class="footer-copy">&copy; 2026 Song&uuml;l &Ouml;z&uuml;g&uuml;rler - Pentester</p>
+  <p class="footer-copy">&copy; 2026 Songül Özügürler | Siber Güvenlik Araştırmacısı</p>
 </footer>
 
 <!-- ══════════════════════════════════════
@@ -1277,9 +1411,9 @@
 <script>
 (function () {
   const lines = [
-    'Song\u00fcl \u00d6z\u00fcg\u00fcrler - Guvenlik Arastirmacisi',
-    'Pentest, tehdit avciligi ve',
-    'guvenlik arastirmasi odakli'
+    'Songül Özügürler - Siber Güvenlik Araştırmacısı',
+    'Web uygulamalarını zorlamayı seviyorum.',
+    'Pentest, tehdit avcılığı ve blue team görünürlüğü odaklı.'
   ];
   const el = document.getElementById('typewriter');
   let ci = 0;
@@ -1326,21 +1460,21 @@
   const input = document.getElementById('terminal-input');
   const commandMap = {
     help: ['about', 'skills', 'projects', 'writeups', 'blog', 'tools', 'experience', 'certs', 'github', 'medium', 'linkedin', 'lang', 'cv', 'flag', 'contact', 'clear', 'sudo'],
-    about: ['Tum profil /tr/about.html sayfasinda.', 'Red team, blue team, bug bounty, mentorluk ve sertifikalar.'],
-    skills: ['web pentest', 'api guvenligi', 'bug bounty', 'red / blue team', 'burp suite', 'python / bash'],
-    projects: ['Recon Automation Pack', 'Writeup Knowledge Base', 'Blue Team Lab Notes'],
-    writeups: ['/#writeups', "Son writeup'lar, PortSwigger lab'lari ve pratik notlar"],
-    blog: ['/tr/blog.html', 'Filtreli, aramali tum yazi arsivi'],
-    tools: ['/#tools', 'One cikan projeler, GitHub reposu ve arastirma araclari'],
-    experience: ['/tr/about.html', 'Red team, blue team, SOC, mentorluk ve operasyon deneyimi'],
+    about: ['Operatör profili: web uygulama güvenliği, bug bounty ve red / blue team bağlamı.', 'Detaylı profil /tr/about.html sayfasında.'],
+    skills: ['web application security', 'tehdit avcılığı', 'blue team operasyonları', 'bug bounty', 'burp suite', 'python / bash'],
+    projects: ['Bug Bounty Recon Workflow', 'unionhunter', 'Detection And Research Notes'],
+    writeups: ['/#writeups', "Son zafiyet writeup'ları, HTB walkthrough'ları ve PortSwigger lab notları"],
+    blog: ['/tr/blog.html', 'Filtreli, aramalı tüm yazı arşivi'],
+    tools: ['/#tools', 'Seçilmiş güvenlik araçları, GitHub projeleri ve pratik araştırma işleri'],
+    experience: ['/tr/about.html', 'Red team, blue team, SOC desteği, mentorluk ve operasyon deneyimi'],
     certs: ['CEH Practical', 'BGA Penetration Tester Training Program', 'CCNA: Intro to Networks', 'AWS Security Fundamentals'],
-    github: ['github.com/songulkizilay', 'One cikanlar: unionhunter, xfcheck, PortswiggerAllLabs, favicon.hash'],
-    medium: ['medium.com/@songulkizilay', 'Writeup, lab notlari ve security research yazilari'],
+    github: ['github.com/Songul-Kizilay', 'Öne çıkanlar: unionhunter, xfcheck, PortswiggerAllLabs, favicon.hash'],
+    medium: ['medium.com/@songulkizilay', 'Writeup, walkthrough ve security research yazıları'],
     linkedin: ['linkedin.com/in/songulozugurler', 'Deneyim, sertifika ve profesyonel profil'],
-    lang: ['/index.html -> English', '/tr/index.html -> Turkce'],
-    cv: ['/tr/about.html', 'Deneyim, sertifikalar ve operator profili ozeti'],
-    flag: ['flag{guzel_deneme}', 'Komik gorsel aciliyor...'],
-    contact: ['songulkizilay46@gmail.com', 'github.com/songulkizilay', 'medium.com/@songulkizilay', 'linkedin.com/in/songulozugurler'],
+    lang: ['/index.html -> English', '/tr/index.html -> Türkçe'],
+    cv: ['/tr/about.html', 'Deneyim, sertifikalar ve operatör profili özeti'],
+    flag: ['flag{guzel_deneme}', 'Komik görsel açılıyor...'],
+    contact: ['songulkizilay46@gmail.com', 'github.com/Songul-Kizilay', 'medium.com/@songulkizilay', 'linkedin.com/in/songulozugurler'],
     sudo: ['Permission denied.', 'Nice try :)']
   };
 
