@@ -1,2 +1,2 @@
-# songulkizilay.github.io
-Cybersecurity blog, writeups and security research by Songül Kızılay
+# Portfolio Site
+Public-facing portfolio and writeup archive.
