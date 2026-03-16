@@ -6,7 +6,7 @@
   <title>About | Songül Özügürler</title>
   <meta
     name="description"
-    content="About Songül Özügürler, security researcher focused on web application security, bug bounty, red and blue team context, and practical security operations."
+    content="About Songül Özügürler, security researcher focused on web application security, bug bounty, red team operations, and practical offensive security work."
   />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,427 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green: #00ff88;
-      --green-dim: #00cc6a;
-      --cyan: #00d4ff;
-      --bg: #0a0e0f;
-      --bg2: #0f1416;
-      --bg3: #141a1c;
-      --border: rgba(0, 255, 136, 0.12);
-      --text: #c9d1d9;
-      --text-dim: #8b949e;
-      --mono: 'JetBrains Mono', monospace;
-      --sans: 'Inter', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      line-height: 1.8;
-      overflow-x: hidden;
-    }
-
-    #particles-canvas {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 1rem 2rem;
-      background: rgba(10, 14, 15, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: var(--mono);
-      font-size: 0.95rem;
-      color: var(--green);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      margin-right: auto;
-    }
-
-    .nav-logo span { color: var(--text-dim); }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--green); }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-left: 0.75rem;
-    }
-
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.4rem;
-      height: 2.4rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: transparent;
-      color: var(--text-dim);
-      font-family: var(--mono);
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .nav-btn.is-active {
-      color: var(--green);
-      border-color: var(--green);
-    }
-
-    .nav-btn:hover {
-      color: var(--green);
-      border-color: var(--green);
-    }
-
-    .nav-menu-btn { display: none; }
-
-    .shell {
-      position: relative;
-      z-index: 1;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 7rem 1.5rem 4rem;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 1.4rem;
-      margin-bottom: 2rem;
-    }
-
-    .panel {
-      background: rgba(15, 20, 22, 0.92);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.6rem;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      color: var(--green);
-      border: 1px solid var(--green);
-      padding: 0.35rem 0.8rem;
-      border-radius: 4px;
-      margin-bottom: 1.2rem;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      font-family: var(--mono);
-      font-size: clamp(2.1rem, 5vw, 3.8rem);
-      line-height: 1.08;
-      color: #fff;
-      margin-bottom: 0.8rem;
-    }
-
-    h1 .accent { color: var(--green); }
-
-    .hero p {
-      font-size: 1rem;
-      color: var(--text-dim);
-      margin-bottom: 1rem;
-    }
-
-    .hero-list {
-      display: grid;
-      gap: 0.7rem;
-      margin-top: 1.2rem;
-    }
-
-    .hero-list div {
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      color: var(--text-dim);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.7rem 0.8rem;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.2rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.82rem 1.1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      letter-spacing: 0.08em;
-      transition: all 0.2s;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: #04140c;
-      font-weight: 700;
-      border: 1px solid var(--green);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-    }
-
-    .btn-outline:hover { border-color: var(--green); color: var(--green); }
-
-    .quick-grid {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .quick-card {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .quick-card h3 {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--green);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.55rem;
-    }
-
-    .quick-card p {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-    }
-
-    .section {
-      margin-top: 1.8rem;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.3rem;
-    }
-
-    .section-head h2 {
-      font-family: var(--mono);
-      font-size: 1rem;
-      color: var(--green);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .section-head::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      background: var(--border);
-    }
-
-    .story-grid,
-    .exp-grid,
-    .cert-grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .story-grid {
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-
-    .story-copy p {
-      margin-bottom: 1rem;
-      color: var(--text-dim);
-      font-size: 1rem;
-    }
-
-    .story-copy span { color: var(--green); }
-
-    .focus-box h3,
-    .exp-card h3,
-    .cert-card h3 {
-      font-family: var(--mono);
-      font-size: 0.86rem;
-      color: var(--green);
-      margin-bottom: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .skill-tags,
-    .cert-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-    }
-
-    .skill-tags span,
-    .cert-tags span {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 0.35rem 0.62rem;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .exp-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .exp-card p,
-    .cert-card p {
-      color: var(--text-dim);
-      font-size: 0.92rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .exp-card ul {
-      list-style: none;
-      display: grid;
-      gap: 0.55rem;
-    }
-
-    .exp-card li {
-      position: relative;
-      padding-left: 0.95rem;
-      color: var(--text-dim);
-      font-size: 0.9rem;
-    }
-
-    .exp-card li::before {
-      content: ">";
-      position: absolute;
-      left: 0;
-      color: var(--green);
-      font-family: var(--mono);
-    }
-
-    .cert-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.5rem 3rem;
-    }
-
-    .footer-box {
-      border: 1px solid var(--border);
-      background: rgba(15, 20, 22, 0.92);
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      color: var(--text-dim);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    @media (max-width: 860px) {
-      .hero,
-      .story-grid,
-      .exp-grid,
-      .cert-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        padding: 0.9rem 1rem;
-        flex-wrap: wrap;
-      }
-
-      .nav-actions { margin-left: auto; }
-      .nav-menu-btn { display: inline-flex; align-items: center; justify-content: center; }
-
-      .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding-top: 0.8rem;
-      }
-
-      .nav-links.open { display: flex; }
-      .nav-links a { font-size: 0.88rem; padding: 0.45rem 0; }
-      .panel{padding:1.2rem;}
-      .cta-row .btn{width:100%;}
-      .footer-box{padding:1rem;}
-      .shell { padding-top: 6rem; }
-    }
-  </style>
+  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:root{--green:#00ff88;--green-dim:#00cc6a;--cyan:#00d4ff;--bg:#0a0e0f;--bg2:#0f1416;--bg3:#141a1c;--border:rgba(0,255,136,0.12);--text:#c9d1d9;--text-dim:#8b949e;--mono:'JetBrains Mono',monospace;--sans:'Inter',sans-serif}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.8;overflow-x:hidden}#particles-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:flex-start;padding:1rem 2rem;background:rgba(10,14,15,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.nav-logo{font-family:var(--mono);font-size:0.95rem;color:var(--green);text-decoration:none;letter-spacing:0.05em;margin-right:auto}.nav-logo span{color:var(--text-dim)}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{font-family:var(--mono);font-size:0.8rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s}.nav-links a:hover,.nav-links a.active{color:var(--green)}.nav-actions{display:flex;align-items:center;gap:0.75rem;margin-left:0.75rem}.nav-btn{display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--text-dim);font-family:var(--mono);text-decoration:none;cursor:pointer;transition:all 0.2s}.nav-btn.is-active{color:var(--green);border-color:var(--green)}.nav-btn:hover{color:var(--green);border-color:var(--green)}.nav-menu-btn{display:none}.shell{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:7rem 1.5rem 4rem}.hero{display:grid;grid-template-columns:1.15fr 0.85fr;gap:1.4rem;margin-bottom:2rem}.panel{background:rgba(15,20,22,0.92);border:1px solid var(--border);border-radius:14px;padding:1.6rem;box-shadow:0 12px 32px rgba(0,0,0,0.18)}.eyebrow{display:inline-block;font-family:var(--mono);font-size:0.72rem;letter-spacing:0.14em;color:var(--green);border:1px solid var(--green);padding:0.35rem 0.8rem;border-radius:4px;margin-bottom:1.2rem;text-transform:uppercase}h1{font-family:var(--mono);font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.08;color:#fff;margin-bottom:0.8rem}h1 .accent{color:var(--green)}.hero p{font-size:1rem;color:var(--text-dim);margin-bottom:1rem}.hero-list{display:grid;gap:0.7rem;margin-top:1.2rem}.hero-list div{font-family:var(--mono);font-size:0.76rem;color:var(--text-dim);border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.8rem;background:rgba(255,255,255,0.02)}.cta-row{display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.2rem}.btn{display:inline-flex;align-items:center;justify-content:center;padding:0.82rem 1.1rem;border-radius:8px;text-decoration:none;font-family:var(--mono);font-size:0.76rem;letter-spacing:0.08em;transition:all 0.2s}.btn-primary{background:var(--green);color:#04140c;font-weight:700;border:1px solid var(--green)}.btn-outline{border:1px solid var(--border);color:var(--text-dim)}.btn-outline:hover{border-color:var(--green);color:var(--green)}.quick-grid{display:grid;gap:0.9rem}.quick-card{border:1px solid var(--border);border-radius:10px;padding:1rem;background:rgba(255,255,255,0.02)}.quick-card h3{font-family:var(--mono);font-size:0.8rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.55rem}.quick-card p{font-size:0.9rem;color:var(--text-dim)}.section{margin-top:1.8rem}.section-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.3rem}.section-head h2{font-family:var(--mono);font-size:1rem;color:var(--green);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap}.section-head::after{content:"";height:1px;flex:1;background:var(--border)}.story-grid,.exp-grid,.cert-grid{display:grid;gap:1rem}.story-grid{grid-template-columns:1.1fr 0.9fr}.story-copy p{margin-bottom:1rem;color:var(--text-dim);font-size:1rem}.story-copy span{color:var(--green)}.focus-box h3,.exp-card h3,.cert-card h3{font-family:var(--mono);font-size:0.86rem;color:var(--green);margin-bottom:0.75rem;letter-spacing:0.08em;text-transform:uppercase}.skill-tags,.cert-tags{display:flex;flex-wrap:wrap;gap:0.55rem}.skill-tags span,.cert-tags span{font-family:var(--mono);font-size:0.72rem;color:var(--text-dim);border:1px solid var(--border);border-radius:999px;padding:0.35rem 0.62rem;background:rgba(255,255,255,0.02)}.exp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.exp-card p,.cert-card p{color:var(--text-dim);font-size:0.92rem;margin-bottom:0.8rem}.exp-card ul{list-style:none;display:grid;gap:0.55rem}.exp-card li{position:relative;padding-left:0.95rem;color:var(--text-dim);font-size:0.9rem}.exp-card li::before{content:">";position:absolute;left:0;color:var(--green);font-family:var(--mono)}.cert-grid{grid-template-columns:repeat(3,minmax(0,1fr))}footer{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 1.5rem 3rem}.footer-box{border:1px solid var(--border);background:rgba(15,20,22,0.92);border-radius:12px;padding:1rem 1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:0.76rem;color:var(--text-dim)}.reveal{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}.reveal.visible{opacity:1;transform:none}@media (max-width:860px){.hero,.story-grid,.exp-grid,.cert-grid{grid-template-columns:1fr}}@media (max-width:600px){nav{padding:0.9rem 1rem;flex-wrap:wrap}.nav-actions{margin-left:auto}.nav-menu-btn{display:inline-flex;align-items:center;justify-content:center}.nav-links{display:none;width:100%;flex-direction:column;gap:0.5rem;padding-top:0.8rem}.nav-links.open{display:flex}.nav-links a{font-size:0.88rem;padding:0.45rem 0}.panel{padding:1.2rem}.cta-row .btn{width:100%}.footer-box{padding:1rem}.shell{padding-top:6rem}}</style>
 </head>
 <body>
   <canvas id="particles-canvas"></canvas>
@@ -457,12 +37,12 @@
   <main class="shell">
     <section class="hero">
       <div class="panel reveal">
-        <span class="eyebrow">&#10003; Operator Profile</span>
+        <span class="eyebrow">&#10003; Red Team Profile</span>
         <h1><span class="accent">Songül</span> Özügürler</h1>
         <p>
           I approach security work like an operator: map the surface, validate the signal,
-          prove the impact, and explain it clearly. My lane is where web application security,
-          bug bounty, red team curiosity, and blue team visibility overlap.
+          prove the impact, and explain it clearly. My lane is web application security,
+          bug bounty, red team operations, and practical offensive validation.
         </p>
         <p>
           The point is not to collect tools. The point is to turn Burp traffic, recon data,
@@ -484,7 +64,7 @@
         </div>
         <div class="quick-card">
           <h3>Where I Operate</h3>
-          <p>Enforsec red team, Infinitum IT blue team, Ministry of Interior SOC support, plus training and lab mentoring.</p>
+          <p>Enforsec red team work, earlier security operations exposure, and hands-on training plus lab mentoring.</p>
         </div>
         <div class="quick-card">
           <h3>How I Work</h3>
@@ -502,7 +82,7 @@
           <p><span>Batman University Computer Engineering</span> graduate. I read applications, APIs, and infrastructure as systems that can be mapped, stressed, misused, and explained under real-world pressure.</p>
           <p><span>CEH Practical</span> and the <span>BGA Penetration Tester Training Program</span> gave me structured lab discipline. Field work turned that discipline into instinct: validate manually, follow the attack path, and make every finding technically defensible.</p>
           <p>On <span>Bugcrowd</span>, I reported ten different issues affecting real web applications and exposed services. The profile includes reflected XSS, CORS misconfiguration, open redirect, IDOR, access control problems, SSRF, origin IP disclosure, and cloud/config exposure patterns. That sharpened my ability to separate noise from exploitable behavior and to write findings that help remediation teams, not just screenshots.</p>
-          <p><span>Enforsec</span> gave me red team exposure. <span>Infinitum IT</span> and the <span>Turkish Ministry of Interior</span> added blue team and SOC context. That combination matters because it taught me how attacks are both built and observed.</p>
+          <p><span>Enforsec</span> pushed my direction firmly toward red team work. <span>Infinitum IT</span> and the <span>Turkish Ministry of Interior</span> gave me earlier security operations context, but the center of gravity for me is offensive testing, exploit validation, and attack-path thinking.</p>
           <p>At <span>BITES Defense Aviation and Space Technologies</span>, I worked around monitoring, security-oriented RPA workflows, and open-source research. At <span>Deneyap Türkiye</span> and <span>CyberHero Academy</span>, I also supported training, lab preparation, and mentoring. I do not only find problems. I also build scenarios, explain them clearly, and make the output usable.</p>
         </article>
 
@@ -523,14 +103,12 @@
             <span>Origin IP Disclosure</span>
             <span>Exposed Services</span>
             <span>Recon</span>
-            <span>Threat Hunting</span>
             <span>Red Team</span>
-            <span>Blue Team</span>
-            <span>SOC Support</span>
+            <span>Offensive Security</span>
+            <span>Attack Surface Mapping</span>
             <span>Burp Suite</span>
             <span>Nuclei</span>
             <span>Nessus</span>
-            <span>Zabbix</span>
             <span>Python</span>
             <span>Bash</span>
             <span>Writeups</span>
@@ -550,8 +128,8 @@
           <p>Practical exposure across offensive testing and defensive operations.</p>
           <ul>
             <li>Red Team Intern at Enforsec Bilgi Güvenliği A.Ş. (Jan 2025 - Apr 2025)</li>
-            <li>Blue Team Intern at Infinitum IT (May 2024 - Sep 2024)</li>
-            <li>Cyber Security Intern with Blue Team and SOC support at the Ministry of Interior (Jan 2023 - Jul 2023)</li>
+            <li>Earlier security operations exposure at Infinitum IT (May 2024 - Sep 2024)</li>
+            <li>Security operations and SOC support background at the Ministry of Interior (Jan 2023 - Jul 2023)</li>
             <li>Earlier cyber security and web application security internships at Xena Vision and ISTECENTER</li>
           </ul>
         </article>
@@ -572,9 +150,9 @@
           <p>Monitoring, repeatable workflows, and operational support.</p>
           <ul>
             <li>IT Support and Software Support Specialist at BITES Defense Aviation and Space Technologies</li>
-            <li>Supported network and system monitoring with Zabbix</li>
-            <li>Contributed to RPA-driven operational workflows</li>
-            <li>Used open-source research to reduce potential security risk exposure</li>
+            <li>Supported monitoring workflows and operational visibility</li>
+            <li>Contributed to RPA-driven operational processes</li>
+            <li>Used open-source research to reduce potential risk exposure</li>
           </ul>
         </article>
 
@@ -612,7 +190,7 @@
         </article>
         <article class="panel cert-card reveal">
           <h3>Operator Mindset</h3>
-          <p>Attacker logic, validation discipline, defensive visibility, and communication that stays technical without becoming vague.</p>
+          <p>Attacker logic, validation discipline, offensive focus, and communication that stays technical without becoming vague.</p>
         </article>
       </div>
     </section>
