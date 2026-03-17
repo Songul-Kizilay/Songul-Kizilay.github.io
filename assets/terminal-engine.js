@@ -16,7 +16,7 @@
       game: "[game]",
       coreItems: "about  writeups  blog  tools  contact",
       coreItems2: "stats  history  achievements  search <term>",
-      funItems: "sudo  hack  matrix  flag",
+      funItems: "sudo  hack  matrix  flag  self-destruct",
       opsItems: "recon  scan <target>  nmap localhost",
       gameItems: "start  help-ctf  leaderboard",
       helpNote: "Hidden commands still exist. Type around.",
@@ -62,6 +62,7 @@
       rm: ["Permission denied.", "This system is protected by Songul Security(TM)."],
       passwords: ["admin: admin123", "root: toor", "developer: password", "", "Just kidding. Use a password manager."],
       flag: ["HTB{songul_security_lab}", "Opening decoy image..."],
+      selfDestruct: ["Self destruct sequence initiated...", "", "5", "4", "3", "2", "1", "", "System survived.", "Nice try."],
       hack: ["Initializing cyber attack...", "[â–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘â–‘] 40%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] 80%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ] 100%"],
       hackEnd: ["Target hacked.", "Just kidding. I hack legally."],
       coffee: ["Brewing coffee...", "", "Fuel for bug hunting."],
@@ -140,7 +141,7 @@
       game: "[oyun]",
       coreItems: "about  writeups  blog  tools  contact",
       coreItems2: "stats  history  achievements  search <kelime>",
-      funItems: "sudo  hack  matrix  flag",
+      funItems: "sudo  hack  matrix  flag  self-destruct",
       opsItems: "recon  scan <hedef>  nmap localhost",
       gameItems: "start  help-ctf  leaderboard",
       helpNote: "Gizli komutlar hala var. Kurcalayabilirsin.",
@@ -186,6 +187,7 @@
       rm: ["Izin reddedildi.", "Bu sistem Songul Security(TM) tarafindan korunuyor."],
       passwords: ["admin: admin123", "root: toor", "developer: password", "", "Saka. Bir sifre yoneticisi kullan."],
       flag: ["HTB{songul_security_lab}", "Komik gorsel aciliyor..."],
+      selfDestruct: ["Self destruct sequence baslatiliyor...", "", "5", "4", "3", "2", "1", "", "Sistem hayatta kaldi.", "Guzel deneme."],
       hack: ["Siber saldiri modulleri baslatiliyor...", "[â–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘â–‘â–‘â–‘â–‘] 40%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘] 80%", "[â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ] 100%"],
       hackEnd: ["Hedef ele gecirildi.", "Saka. Yasal hack yapiyorum."],
       coffee: ["Kahve demleniyor...", "", "Bug avinin yakiti hazir."],
@@ -695,6 +697,7 @@
   registerExactCommand("rm -rf /", async () => slowPrintLines(t.rm, 70));
   registerCommand("passwords", async () => slowPrintLines(t.passwords, 65));
   registerCommand("flag", async () => { await slowPrintLines(t.flag, 70); performAction({ type: "same-tab", target: paths.flag }); });
+  registerCommand("self-destruct", async () => slowPrintLines(t.selfDestruct, 220));
   registerCommand("hack", async () => { await exploitAnimation(t.hack); printLine(t.hackEnd[0], "out"); printLine(t.hackEnd[1], "out"); });
   registerCommand("motivation", async () => {
     const quotes = lang === "tr"
