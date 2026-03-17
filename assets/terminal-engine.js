@@ -14,12 +14,16 @@
       fun: "[fun]",
       ops: "[ops]",
       game: "[game]",
+      hints: "[hints]",
       coreItems: "about  writeups  blog  tools  contact",
       coreItems2: "stats  history  achievements  search <term>",
       funItems: "sudo  hack  matrix  flag  self-destruct",
       opsItems: "recon  scan <target>  nmap localhost",
       gameItems: "start  help-ctf  leaderboard",
-      helpNote: "Hidden commands still exist. Type around.",
+      hintItems: "rm -rf /  passwords  coffee  aliens  404  debug",
+      hintItems2: "developer  bruteforce login  sudo hire songul",
+      hintItems3: "ls  pwd  cd /admin  cat /notes.txt",
+      helpNote: "More exist. Type around.",
       notFound: "Command not found.",
       tryHelp: "Try: help",
       ctfHelp: "That command will not help you hack this lab.",
@@ -139,12 +143,16 @@
       fun: "[eglence]",
       ops: "[operasyon]",
       game: "[oyun]",
+      hints: "[ipuclari]",
       coreItems: "about  writeups  blog  tools  contact",
       coreItems2: "stats  history  achievements  search <kelime>",
       funItems: "sudo  hack  matrix  flag  self-destruct",
       opsItems: "recon  scan <hedef>  nmap localhost",
       gameItems: "start  help-ctf  leaderboard",
-      helpNote: "Gizli komutlar hala var. Kurcalayabilirsin.",
+      hintItems: "rm -rf /  passwords  coffee  aliens  404  debug",
+      hintItems2: "developer  bruteforce login  sudo hire songul",
+      hintItems3: "ls  pwd  cd /admin  cat /notes.txt",
+      helpNote: "Daha fazlasi var. Kurcala.",
       notFound: "Komut bulunamadi.",
       tryHelp: "Dene: help",
       ctfHelp: "Bu komut labi gecmene yardim etmez.",
@@ -604,7 +612,7 @@
   }
 
   registerCommand("help", async () => {
-    await slowPrintLines([t.helpTitle, "", t.core, t.coreItems, t.coreItems2, "", t.fun, t.funItems, "", t.ops, t.opsItems, "", t.game, t.gameItems, "", t.helpNote], 55);
+    await slowPrintLines([t.helpTitle, "", t.core, t.coreItems, t.coreItems2, "", t.fun, t.funItems, "", t.ops, t.opsItems, "", t.game, t.gameItems, "", t.hints, t.hintItems, t.hintItems2, t.hintItems3, "", t.helpNote], 55);
   });
   registerCommand("about", async () => { await slowPrintLines(t.about, 70); performAction({ type: "same-tab", target: paths.about }); });
   registerCommand("skills", async () => { await slowPrintLines(t.skills, 60); });
