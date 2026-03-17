@@ -1352,14 +1352,14 @@
   const ctx    = canvas.getContext('2d');
 
   let W, H, mouse = { x: -9999, y: -9999 };
-  const PARTICLE_COUNT = 168;
-  const LINK_DIST      = 125;
-  const REPULSE_DIST   = 135;
-  const SPEED = 0.16;
-  const ESCAPE_FORCE = 0.40;
-  const WANDER_FORCE = 0.006;
-  const HOME_FORCE = 0.0018;
-  const MAX_TRIANGLES = 72;
+  const PARTICLE_COUNT = 224;
+  const LINK_DIST      = 138;
+  const REPULSE_DIST   = 152;
+  const SPEED = 0.18;
+  const ESCAPE_FORCE = 0.46;
+  const WANDER_FORCE = 0.0085;
+  const HOME_FORCE = 0.0013;
+  const MAX_TRIANGLES = 110;
   const COLOR          = '0, 255, 136'; // green channels
 
   let particles = [];
@@ -1438,7 +1438,7 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < LINK_DIST) {
           near.push({ j, dist });
-          const alpha = (1 - dist / LINK_DIST) * 0.17;
+          const alpha = (1 - dist / LINK_DIST) * 0.20;
           ctx.strokeStyle = `rgba(${COLOR}, ${alpha})`;
           ctx.lineWidth   = 0.85;
           ctx.beginPath();
@@ -1456,7 +1456,7 @@
           const dy = p2.y - p3.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < LINK_DIST * 0.95) {
-            const alpha = Math.max(0.016, (1 - ((near[a].dist + near[b].dist + dist) / 3) / LINK_DIST) * 0.07);
+            const alpha = Math.max(0.022, (1 - ((near[a].dist + near[b].dist + dist) / 3) / LINK_DIST) * 0.09);
             ctx.fillStyle = `rgba(${COLOR}, ${alpha})`;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
@@ -1475,7 +1475,7 @@
       p.update();
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${COLOR}, 0.54)`;
+      ctx.fillStyle = `rgba(${COLOR}, 0.62)`;
       ctx.fill();
     });
 
@@ -1497,7 +1497,6 @@
 
 </body>
 </html>
-
 
 
 
